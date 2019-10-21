@@ -1,0 +1,260 @@
+---
+title: "SHINY" 
+subtitle: "INTERATIVIDADE COM R"
+author: "Davi, Eduardo, Gabriela, Jadson, Tailine"
+output: 
+  beamer_presentation:
+    keep_tex: true
+    includes:
+     in_header: Estilo.txt
+     theme: "fibeamer"
+     highlight: "tango"
+    latex_engine: xelatex
+---
+
+```{r message=FALSE, warning=FALSE, include=T, paged.print=FALSE, results='hide', echo=F}
+library(knitr)
+library(tidyverse)
+library(reshape2)
+require(broom)
+opts_chunk$set(fig.align="center", fig.height=3.3, fig.width=4.2)
+opts_knit$set(out.format="latex")
+knitr::opts_chunk$set(dev='pdf')
+
+```
+
+
+## SUMÁRIO
+
+\begin{enumerate}
+\item O que é o Shiny?
+\item Exemplos práticos
+\item Estrutura básica
+\begin{enumerate}
+\item User Interface
+\item Server
+\end{enumerate}
+\item Aplicações
+\item Referências
+\end{enumerate}
+
+
+##
+\begin{textblock*}{0cm}(0cm,-.0cm)
+\includegraphics[width=\paperwidth, height=\paperheight]{logo}
+\end{textblock*}
+
+## O QUE É O SHINY
+
+shiny texto texto texto texto texto texto texto texto texto vtexto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+
+
+## INTERATIVIDADE
+
+\section{Instruções do Servidor (R)}
+\begin{center}
+\includegraphics[width=13mm]{trade}
+\end{center}
+\section{User Interface (UI)}
+
+## REATIVIDADE
+
+\begin{figure}
+\includegraphics[width=110mm]{cxv}
+\end{figure}
+
+
+# EXEMPLOS PRÁTICOS
+
+
+## ESTRUTURA
+
+```{r template, eval=FALSE, include=TRUE}
+library(shiny)
+
+ui <- fluidPage()
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+
+## USER INTERFACE (UI)
+
+\begin{table}
+\begin{tabular}{l | l}
+Função & Finalidade \\
+\hline \hline
+library(shiny) & \small Carregar o pacote Shiny. \\
+ui <- fluidPage() & \small Criar uma interface com o usuário. \\
+titlePanel() & \small Criar um painel contendo um título do aplicativo. \\
+sidebarLayout() & \small Criar um layout com uma barra lateral e área principal. \\
+sidebarPanel() & \small Criar um painel com barra lateral. \\
+mainPanel() & \small Criar um painel principal contendo elementos de saída. \\
+\end{tabular}
+\end{table}
+
+## WIDGETS
+
+\includegraphics[width=4.4in]{inpfun}
+\begin{center}
+\tiny{Fonte: Shiny from RStudio}
+\end{center}
+
+## CRIANDO FUNÇÕES DE ENTRADA
+
+```{r input, eval=FALSE, include=TRUE}
+library(shiny)
+ui <- fluidPage(
+  sliderInput(inputId = "num",
+              value = 25, min = 1, max = 100) )
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+## PRÓXIMO PASSO
+
+\begin{center}
+Para que seja possível \alert{visualizar} o input, é necessário escolher como será o \alert{output.}
+\end{center}
+\begin{center}
+Para esse exemplo, queremos que o output gere um \alert{gráfico.}
+\end{center}
+\begin{center}
+Mas que \alert{função} precisamos usar agora?
+\end{center}
+
+## OUTPUTS
+
+\begin{table}
+\begin{tabular}{l | l}
+Função & Finalidade \\
+\hline \hline
+dataTableOutput() &  Tabela Interativa \\
+htmlOutput() & HTML puro \\ 
+imageOutput() & Imagem \\
+plotOutput() & Gráfico \\
+tableOutput() & Tabela \\
+textOutput() & Texto \\
+uiOutput() & Elemento do Shiny UI \\
+verbatimTextOutput() & Texto \\
+\end{tabular}
+\end{table}
+
+## DEFININDO O TIPO DE OUTPUT
+
+\only<2>{
+\begin{textblock}{1}[0, .5](1.7, 10.5)
+\begin{tikzpicture}
+    \draw[fibeamer@red, ultra thick,rounded corners] (0,0) rectangle (5,.7);
+\end{tikzpicture}
+\end{textblock}
+}
+
+```{r output, eval=FALSE, include=TRUE}
+library(shiny)
+ui <- fluidPage(
+  sliderInput(inputId = "num",label= "Escolha um número", value = 25, min = 1, max = 100), 
+  plotOutput("hist"))
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+## RESULTADO
+\begin{center}
+      Agora foi gerado um \alert{botão de slide} onde o usuário fará a escolha de um número entre 1 e 100.\\\bigskip
+    \includegraphics[width=75mm]{p1}
+\end{center}
+
+## PRÓXIMO PASSO
+
+\begin{center}
+A próxima etapa é \alert{configurar} o output.
+\end{center}
+\begin{center} 
+Dentro do UI, apenas demos alguns nomes.
+\end{center}
+\begin{center}
+Agora precisamos definir o que realmente vai acontecer.
+\end{center}
+
+## SERVER
+
+\begin{table}
+\begin{tabular}{l | l}
+Função & Finalidade \\
+\hline \hline
+library(shiny) & \small Carregar o pacote Shiny. \\
+shinyServer() & \small Definir a lógica do servidor do aplicativo Shiny. \\ 
+function(input,output){} & \small Funções render() \\
+\end{tabular}
+\end{table}
+
+## RENDER ()
+
+\begin{table}
+\begin{tabular}{l | l}
+Output (UI) & Render (Server) \\
+\hline \hline
+dataTableOutput() &  renderDataTable \\
+imageOutput() & renderImage \\
+plotOutput() & renderPlot \\
+tableOutput() & renderTable \\
+textOutput() & renderText \\
+verbatimTextOutput() & renderPrint \\
+uiOutput() & renderUI\\
+htmlOutput() & renderUI \\ 
+\end{tabular}
+\end{table}
+
+
+
+
+
+## CONFIGURANDO O OUTPUT
+
+\only<2>{
+\begin{textblock}{1}[0, .5](1.7, 11.6)
+\begin{tikzpicture}
+    \draw[fibeamer@red, ultra thick,rounded corners] (0,0) rectangle (5.7,1.5);
+\end{tikzpicture}
+\end{textblock}
+}
+
+```{r config, eval=FALSE, include=TRUE}
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Escolha um número", 
+    value = 25, min = 1, max = 100), 
+  plotOutput("hist"))
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num))})}
+shinyApp(ui = ui, server = server)
+```
+
+## RESULTADO
+\begin{columns}
+  \centering
+    \column{0.5\textwidth}
+      \includegraphics[width=50mm]{p2}
+    \column{0.5\textwidth}
+      \includegraphics[width=50mm]{p3}
+\end{columns}
+
+# APLICAÇÕES
+
+## REFERÊNCIAS
+
+shiny texto texto texto texto texto texto texto texto texto vtexto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+
+
+
+
+
+
+
