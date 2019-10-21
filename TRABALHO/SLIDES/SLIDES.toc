@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Instruções do Servidor (R)}{5}{0}{1}
-\beamer@sectionintoc {2}{User Interface (UI)}{5}{0}{2}
-\beamer@sectionintoc {3}{APLICAÇÕES}{23}{0}{3}
-\beamer@sectionintoc {4}{ANEXOS}{24}{0}{4}

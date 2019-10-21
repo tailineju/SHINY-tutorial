@@ -243,9 +243,8 @@ shinyApp(ui = ui, server = server)
 # ANEXOS
 
 ## APLICAÇÕES I
-\tiny{
+\tiny
 ```{r app1, eval=FALSE, include=TRUE}
-# Aqui é só manipulação dos dados pra ficar no formato certo
 pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)
 dados <- read.csv2("amazon.csv")
 dados$number <- as.vector(dados$number)
@@ -258,44 +257,14 @@ dados <- dados %>%
   mutate(dias = rep("01",length(dados$date)))
 dados <- unite(dados,data,date,dias,sep = "-")
 dados$data <- myd(dados$data)
-
-# Aqui começa o shiny
 library(shiny)
-
-### Definir UI para a aplicacao
 ui <- fluidPage(    
-  
-  # Titulo
   titlePanel("Queimadas no Brasil"),
-  
-  # Gerar a tabela de escolha dos meses e estados
-  sidebarLayout(      
-    
-    # Define the sidebar with one input
-    sidebarPanel(
-      selectInput("mes", "Mes:", 
-                  choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
-      selectInput("estado","Estado:",
-                  choices = c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia",
-                              "Ceara","Distrito Federal","Espirito Santo","Goias",
-                              "Maranhao","Mato Grosso","Minas Gerais","Paraiba",
-                              "Pernambuco","Piau","Rio","Rondonia","Roraima")),
-      hr(),
-      helpText("Dados fornecidos em 
-               http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")
-      ),
-    
-    # Criar um espaco para o grafico
-    mainPanel(
-      plotOutput("Grafico")  
-    )
-    
-    )
-)
-# Definir o server
+  sidebarLayout(sidebarPanel(selectInput("mes", "Mes:", choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
+      selectInput("estado","Estado:", choices=c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia","Ceara","Distrito Federal","Espirito Santo","Goias","Maranhao","Mato Grosso","Minas Gerais","Paraiba","Pernambuco","Piau","Rio","Rondonia","Roraima")),
+      hr(), helpText("Dados fornecidos em http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")),
+    mainPanel(plotOutput("Grafico"))))
 server <- function(input, output) {
-  
-  # preencher o espaço criado com o grafico
   output$Grafico <- renderPlot({
     if(input$mes == "Todos"){
       if(input$estado == "Todos"){
@@ -338,12 +307,10 @@ server <- function(input, output) {
       ylab("Numero de queimadas")+
       theme_classic() +
       ggtitle("Numero de queimadas por ano")
-  }}})
-}
-# Rodar o shiny
+  }}})}
 shinyApp(ui = ui, server = server)
 ```
-}
+
 ## APLICAÇÕES II
 
 ```{r app2, eval=FALSE, include=TRUE}

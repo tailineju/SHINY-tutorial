@@ -2,18 +2,18 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1571683522779.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1049758115",
+    "hash" : "0",
     "id" : "BBE0E352",
-    "lastKnownWriteTime" : 1571686159,
-    "last_content_update" : 1571686159353,
+    "lastKnownWriteTime" : 1571686583,
+    "last_content_update" : 1571686826125,
     "path" : "~/GitHub/SHINY/TRABALHO/SLIDES/SLIDES.Rmd",
     "project_path" : "TRABALHO/SLIDES/SLIDES.Rmd",
     "properties" : {
-        "cursorPosition" : "101,77",
-        "scrollLine" : "94"
+        "cursorPosition" : "253,16",
+        "scrollLine" : "246"
     },
     "read_only" : false,
     "read_only_alternatives" : [
