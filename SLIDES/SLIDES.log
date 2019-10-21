@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  16 OCT 2019 12:40
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  21 OCT 2019 15:26
 entering extended mode
 **./SLIDES.tex
 (SLIDES.tex
@@ -2220,8 +2220,8 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [2
 
 ]
-File: logo.jpg Graphic file (type bmp)
-<logo.jpg>
+File: imagens/logo.jpg Graphic file (type bmp)
+<imagens/logo.jpg>
 
 Overfull \hbox (364.20679pt too wide) in paragraph at lines 277--277
 [][]  
@@ -2241,8 +2241,8 @@ Overfull \hbox (2.47551pt too wide) in paragraph at lines 299--299
 [][]  
  []
 
-File: trade.png Graphic file (type bmp)
-<trade.png>
+File: imagens/trade.png Graphic file (type bmp)
+<imagens/trade.png>
 
 Overfull \hbox (2.47551pt too wide) in paragraph at lines 299--299
 [] 
@@ -2253,8 +2253,8 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [5
 
 ]
-File: cxv.png Graphic file (type bmp)
-<cxv.png>
+File: imagens/cxv.png Graphic file (type bmp)
+<imagens/cxv.png>
 
 Overfull \hbox (12.80356pt too wide) in paragraph at lines 308--308
  [] 
@@ -2325,8 +2325,8 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [9
 
 ]
-File: inpfun.jpg Graphic file (type bmp)
-<inpfun.jpg>
+File: imagens/inpfun.jpg Graphic file (type bmp)
+<imagens/inpfun.jpg>
 
 Overfull \hbox (17.8108pt too wide) in paragraph at lines 357--357
 [][]  
@@ -2373,8 +2373,8 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [15
 
 ]
-File: p1.jpg Graphic file (type bmp)
-<p1.jpg>
+File: imagens/p1.jpg Graphic file (type bmp)
+<imagens/p1.jpg>
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [16
@@ -2417,10 +2417,10 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [21
 
 ]
-File: p2.jpg Graphic file (type bmp)
-<p2.jpg>
-File: p3.jpg Graphic file (type bmp)
-<p3.jpg>
+File: imagens/p2.jpg Graphic file (type bmp)
+<imagens/p2.jpg>
+File: imagens/p3.jpg Graphic file (type bmp)
+<imagens/p3.jpg>
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [22
@@ -2455,8 +2455,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45933 strings out of 427671
- 904612 string characters out of 3149234
+ 45934 strings out of 427671
+ 904788 string characters out of 3149234
  1149317 words of memory out of 3000000
  49291 multiletter control sequences out of 15000+200000
  554592 words of font info for 107 fonts, out of 3000000 for 9000

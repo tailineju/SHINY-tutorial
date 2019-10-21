@@ -28,7 +28,6 @@ knitr::opts_chunk$set(dev='pdf')
 
 \begin{enumerate}
 \item O que é o Shiny?
-\item Exemplos práticos
 \item Estrutura básica
 \begin{enumerate}
 \item User Interface
