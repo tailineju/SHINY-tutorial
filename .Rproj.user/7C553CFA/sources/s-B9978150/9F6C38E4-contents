@@ -5,4 +5,18 @@ date: "Outubro de 2019"
 output: pdf_document
 ---
 
-## Criando o documento apenas
+# INTRODUÇÃO
+
+# ESTRUTURA
+
+```{r app2, eval=FALSE, include=TRUE}
+library(shiny)
+
+ui <- fluidPage()
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+
+

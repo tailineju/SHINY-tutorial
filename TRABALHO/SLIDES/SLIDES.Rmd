@@ -32,6 +32,7 @@ knitr::opts_chunk$set(dev='pdf')
 \item Server
 \end{enumerate}
 \item Aplicações
+\item Anexos
 \item Referências
 \end{enumerate}
 
@@ -42,6 +43,7 @@ knitr::opts_chunk$set(dev='pdf')
 
 ## O QUE É O SHINY
 
+Estruturar tanto a interface com o usuário quanto o processamento de dados, geração de visualizações e modelagem, isto é, nós programamos tanto o user side quanto o server side numa tacada só. Assim, ao rodarmos o código, criamos um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
 
 ## INTERATIVIDADE
 
@@ -94,11 +96,20 @@ mainPanel() & \small Criar um painel principal contendo elementos de saída. \\
 
 ## CRIANDO FUNÇÕES DE ENTRADA
 
+\only<2>{
+\begin{textblock}{1}[0, .5](1.7, 8.5)
+\begin{tikzpicture}
+    \draw[fibeamer@red, ultra thick,rounded corners] (0,0) rectangle (6.8,2.1);
+\end{tikzpicture}
+\end{textblock}
+}
+
 ```{r input, eval=FALSE, include=TRUE}
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",
-              value = 25, min = 1, max = 100) )
+              value = 25, 
+              min = 1, max = 100) )
 server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
@@ -107,11 +118,7 @@ shinyApp(ui = ui, server = server)
 
 \begin{center}
 Para que seja possível \alert{visualizar} o input, é necessário escolher como será o \alert{output.}
-\end{center}
-\begin{center}
 Para esse exemplo, queremos que o output gere um \alert{gráfico.}
-\end{center}
-\begin{center}
 Mas que \alert{função} precisamos usar agora?
 \end{center}
 
@@ -236,17 +243,107 @@ shinyApp(ui = ui, server = server)
 # ANEXOS
 
 ## APLICAÇÕES I
-
+\tiny{
 ```{r app1, eval=FALSE, include=TRUE}
+# Aqui é só manipulação dos dados pra ficar no formato certo
+pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)
+dados <- read.csv2("amazon.csv")
+dados$number <- as.vector(dados$number)
+dados$number <- as.numeric(dados$number)
+dados$X <- NULL
+dados$X.1 <- NULL
+dados <- dados %>%
+  mutate(date = unite(dados,year_month,month,year,sep = "-")$year_month)
+dados <- dados %>%
+  mutate(dias = rep("01",length(dados$date)))
+dados <- unite(dados,data,date,dias,sep = "-")
+dados$data <- myd(dados$data)
+
+# Aqui começa o shiny
 library(shiny)
 
-ui <- fluidPage()
-
-server <- function(input, output) {}
-
+### Definir UI para a aplicacao
+ui <- fluidPage(    
+  
+  # Titulo
+  titlePanel("Queimadas no Brasil"),
+  
+  # Gerar a tabela de escolha dos meses e estados
+  sidebarLayout(      
+    
+    # Define the sidebar with one input
+    sidebarPanel(
+      selectInput("mes", "Mes:", 
+                  choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
+      selectInput("estado","Estado:",
+                  choices = c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia",
+                              "Ceara","Distrito Federal","Espirito Santo","Goias",
+                              "Maranhao","Mato Grosso","Minas Gerais","Paraiba",
+                              "Pernambuco","Piau","Rio","Rondonia","Roraima")),
+      hr(),
+      helpText("Dados fornecidos em 
+               http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")
+      ),
+    
+    # Criar um espaco para o grafico
+    mainPanel(
+      plotOutput("Grafico")  
+    )
+    
+    )
+)
+# Definir o server
+server <- function(input, output) {
+  
+  # preencher o espaço criado com o grafico
+  output$Grafico <- renderPlot({
+    if(input$mes == "Todos"){
+      if(input$estado == "Todos"){
+        ggplot(dados,aes(x=data,y=number)) +
+          geom_point() +
+          geom_jitter(width = 20,height = 0.2) +
+          geom_smooth(method = "lm",formula = y~x,se = F)+
+          xlab("Anos") +
+          ylab("Numero de queimadas")+
+          theme_classic() +
+          ggtitle("Numero de queimadas por ano")
+      }else{
+      ggplot(dados %>%
+               filter(state == input$estado),aes(x=data,y=number)) +
+        geom_point() +
+        geom_jitter(width = 20,height = 0.2) +
+        geom_smooth(method = "lm",formula = y~x,se = F)+
+        xlab("Anos") +
+        ylab("Numero de queimadas")+
+        theme_classic() +
+        ggtitle("Numero de queimadas por ano")}}else{
+          if(input$estado == "Todos"){
+            ggplot(dados %>%
+                     filter(month == input$mes),aes(x=data,y=number)) +
+              geom_point() +
+              geom_jitter(width = 20,height = 0.2) +
+              geom_smooth(method = "lm",formula = y~x,se = F)+
+              xlab("Anos") +
+              ylab("Numero de queimadas")+
+              theme_classic() +
+              ggtitle("Numero de queimadas por ano")
+          }else{
+    ggplot(dados %>%
+             filter(month == input$mes)%>%
+             filter(state == input$estado),aes(x=data,y=number)) +
+      geom_point() +
+      geom_jitter(width = 20,height = 0.2) +
+      geom_smooth(method = "lm",formula = y~x,se = F)+
+      xlab("Anos") +
+      ylab("Numero de queimadas")+
+      theme_classic() +
+      ggtitle("Numero de queimadas por ano")
+  }}})
+}
+# Rodar o shiny
 shinyApp(ui = ui, server = server)
 ```
-
+}
 ## APLICAÇÕES II
 
 ```{r app2, eval=FALSE, include=TRUE}
@@ -259,4 +356,8 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-# REFERÊNCIAS
+## REFERÊNCIAS
+
+1. RSTUDIO INC. \textbf{Shiny from RStudio}. Disponível em: <https://shiny.rstudio.com/tutorial/>. Acesso em: setembro de 2019.
+2. PUC MINAS. \textbf{Abakos}, Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
+3. \textbf{Curso-R}. Disponível em: <http://material.curso-r.com/shiny/>. Acesso em: setembro de 2019.
