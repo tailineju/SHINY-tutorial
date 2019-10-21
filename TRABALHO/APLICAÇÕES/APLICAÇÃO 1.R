@@ -1,5 +1,5 @@
 # Aqui é só manipulação dos dados pra ficar no formato certo
-pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)
+pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom,shinythemes)
 dados <- read.csv2("amazon.csv")
 dados$number <- as.vector(dados$number)
 dados$number <- as.numeric(dados$number)
@@ -17,7 +17,7 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(    
-  
+  shinythemes::themeSelector(),
   # Give the page a title
   titlePanel("Queimadas no Brasil"),
   dateRangeInput('dateRange',
