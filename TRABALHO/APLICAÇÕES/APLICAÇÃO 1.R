@@ -15,13 +15,17 @@ dados$data <- myd(dados$data)
 # Aqui começa o shiny
 library(shiny)
 
-### Definir UI para a aplicacao
+# Define UI for application that draws a histogram
 ui <- fluidPage(    
   
-  # Titulo
+  # Give the page a title
   titlePanel("Queimadas no Brasil"),
+  dateRangeInput('dateRange',
+                 label = 'Periodo analizado',
+                 start = Sys.Date() - 2, end = Sys.Date() + 2
+  ),
   
-  # Gerar a tabela de escolha dos meses e estados
+  # Generate a row with a sidebar
   sidebarLayout(      
     
     # Define the sidebar with one input
@@ -38,60 +42,70 @@ ui <- fluidPage(
                http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")
       ),
     
-    # Criar um espaco para o grafico
+    # Create a spot for the barplot
     mainPanel(
       plotOutput("Grafico")  
     )
     
     )
 )
-# Definir o server
+# Define server logic required to draw a histogram
 server <- function(input, output) {
   
-  # preencher o espaço criado com o grafico
+  # Fill in the spot we created for a plot
   output$Grafico <- renderPlot({
     if(input$mes == "Todos"){
       if(input$estado == "Todos"){
-        ggplot(dados,aes(x=data,y=number)) +
-          geom_point() +
-          geom_jitter(width = 20,height = 0.2) +
-          geom_smooth(method = "lm",formula = y~x,se = F)+
+        ggplot(dados%>%
+                 filter(data>=input$dateRange[1])%>%
+                 filter(data<=input$dateRange[2]),
+                        aes(x=data,y=number)) +
+          geom_point(colour="red") +
+          geom_jitter(width = 10,height = 0.1,color="red") +
+          geom_smooth(method = "lm",formula = y~x,se = T,color="black")+
           xlab("Anos") +
           ylab("Numero de queimadas")+
           theme_classic() +
           ggtitle("Numero de queimadas por ano")
       }else{
       ggplot(dados %>%
-               filter(state == input$estado),aes(x=data,y=number)) +
-        geom_point() +
-        geom_jitter(width = 20,height = 0.2) +
-        geom_smooth(method = "lm",formula = y~x,se = F)+
+               filter(state == input$estado)%>%
+               filter(data>=input$dateRange[1])%>%
+               filter(data<=input$dateRange[2]),aes(x=data,y=number)) +
+        geom_point(colour="red") +
+        geom_jitter(width = 10,height = 0.1,color="red") +
+        geom_smooth(method = "lm",formula = y~x,se = F,color="black")+
         xlab("Anos") +
         ylab("Numero de queimadas")+
         theme_classic() +
         ggtitle("Numero de queimadas por ano")}}else{
           if(input$estado == "Todos"){
             ggplot(dados %>%
-                     filter(month == input$mes),aes(x=data,y=number)) +
-              geom_point() +
-              geom_jitter(width = 20,height = 0.2) +
-              geom_smooth(method = "lm",formula = y~x,se = F)+
+                     filter(month == input$mes)%>%
+                     filter(data>=input$dateRange[1])%>%
+                     filter(data<=input$dateRange[2]),aes(x=data,y=number)) +
+              geom_point(colour="red") +
+              geom_jitter(width = 10,height = 0.1,color="red") +
+              geom_smooth(method = "lm",formula = y~x,se = F,color="black")+
               xlab("Anos") +
               ylab("Numero de queimadas")+
               theme_classic() +
               ggtitle("Numero de queimadas por ano")
           }else{
+    # Render a barplot
     ggplot(dados %>%
              filter(month == input$mes)%>%
-             filter(state == input$estado),aes(x=data,y=number)) +
-      geom_point() +
-      geom_jitter(width = 20,height = 0.2) +
-      geom_smooth(method = "lm",formula = y~x,se = F)+
+             filter(state == input$estado)%>%
+             filter(data>=input$dateRange[1])%>%
+             filter(data<=input$dateRange[2]),aes(x=data,y=number)) +
+      geom_point(colour="red") +
+      geom_jitter(width = 10,height = 0.1,color="red") +
+      geom_smooth(method = "lm",formula = y~x,se = F,color="black")+
       xlab("Anos") +
       ylab("Numero de queimadas")+
       theme_classic() +
       ggtitle("Numero de queimadas por ano")
   }}})
 }
-# Rodar o shiny
+# Run the application 
 shinyApp(ui = ui, server = server)
