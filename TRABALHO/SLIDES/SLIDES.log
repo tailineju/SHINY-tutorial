@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  21 OCT 2019 15:26
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  21 OCT 2019 15:52
 entering extended mode
 **./SLIDES.tex
 (SLIDES.tex
@@ -2192,25 +2192,25 @@ mapping=tex-text;" at 4.0pt
 
 ]
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 268.
+(Font)              scaled to size 10.0pt on input line 267.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 10.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 268.
+(Font)              scaled to size 14.4pt on input line 267.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 14.4pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 268.
+(Font)              scaled to size 12.0pt on input line 267.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 12.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 268.
+(Font)              scaled to size 12.0pt on input line 267.
 Requested font "[Carlito-Italic.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;m
 apping=tex-text;" at 12.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
@@ -2223,7 +2223,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/logo.jpg Graphic file (type bmp)
 <imagens/logo.jpg>
 
-Overfull \hbox (364.20679pt too wide) in paragraph at lines 277--277
+Overfull \hbox (364.20679pt too wide) in paragraph at lines 276--276
 [][]  
  []
 
@@ -2237,14 +2237,14 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [4
 
 ]
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 299--299
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 292--292
 [][]  
  []
 
 File: imagens/trade.png Graphic file (type bmp)
 <imagens/trade.png>
 
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 299--299
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 292--292
 [] 
  []
 
@@ -2256,18 +2256,13 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/cxv.png Graphic file (type bmp)
 <imagens/cxv.png>
 
-Overfull \hbox (12.80356pt too wide) in paragraph at lines 308--308
+Overfull \hbox (12.80356pt too wide) in paragraph at lines 301--301
  [] 
  []
 
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [6
-
-]
-File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
-<fibeamer/theme/uu/uu-watermark.png>
-[7
 
 ]
 \openout4 = `SLIDES.vrb'.
@@ -2288,20 +2283,20 @@ LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/bx/n' will be
 )
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[8
+[7
 
 ]
 Requested font "zavmr7t" at 10.95pt
 Requested font "zavmr7t" at 7.665pt
 Requested font "zavmr7t" at 5.475pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 9.30756pt on input line 346.
+(Font)              scaled to size 9.30756pt on input line 336.
 Requested font "zavmri7m" at 9.30756pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 6.51529pt on input line 346.
+(Font)              scaled to size 6.51529pt on input line 336.
 Requested font "zavmri7m" at 6.51529pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 4.65378pt on input line 346.
+(Font)              scaled to size 4.65378pt on input line 336.
 Requested font "zavmri7m" at 4.65378pt
 Requested font "zavmr7y" at 10.95pt
 Requested font "zavmr7y" at 7.665pt
@@ -2316,8 +2311,20 @@ Requested font "msbm10" at 10.95pt
 Requested font "msbm7" at 7.665pt
 Requested font "msbm5" at 5.475pt
 
-Overfull \hbox (17.53215pt too wide) in paragraph at lines 346--346
+Overfull \hbox (17.53215pt too wide) in paragraph at lines 336--336
  [] 
+ []
+
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[8
+
+]
+File: imagens/inpfun.jpg Graphic file (type bmp)
+<imagens/inpfun.jpg>
+
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 347--347
+[][]  
  []
 
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
@@ -2325,21 +2332,14 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [9
 
 ]
-File: imagens/inpfun.jpg Graphic file (type bmp)
-<imagens/inpfun.jpg>
+\openout4 = `SLIDES.vrb'.
 
-Overfull \hbox (17.8108pt too wide) in paragraph at lines 357--357
-[][]  
- []
-
+(SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [10
 
 ]
-\openout4 = `SLIDES.vrb'.
-
-(SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [11
@@ -2350,17 +2350,12 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [12
 
 ]
-File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
-<fibeamer/theme/uu/uu-watermark.png>
-[13
-
-]
 \openout4 = `SLIDES.vrb'.
 
 (SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[14
+[13
 
 ] (SLIDES.vrb
 Overfull \hbox (121.10152pt too wide) in paragraph at lines 10--10
@@ -2370,33 +2365,33 @@ Overfull \hbox (121.10152pt too wide) in paragraph at lines 10--10
 )
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[15
+[14
 
 ]
 File: imagens/p1.jpg Graphic file (type bmp)
 <imagens/p1.jpg>
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[16
+[15
 
 ]
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[17
+[16
 
 ]
-Overfull \hbox (12.69452pt too wide) in paragraph at lines 472--472
+Overfull \hbox (12.69452pt too wide) in paragraph at lines 464--464
  [] 
  []
 
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[18
+[17
 
 ]
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[19
+[18
 
 ]
 \openout4 = `SLIDES.vrb'.
@@ -2404,7 +2399,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 (SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[20
+[19
 
 ] (SLIDES.vrb
 Overfull \hbox (141.01834pt too wide) in paragraph at lines 10--10
@@ -2414,13 +2409,18 @@ Overfull \hbox (141.01834pt too wide) in paragraph at lines 10--10
 )
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
-[21
+[20
 
 ]
 File: imagens/p2.jpg Graphic file (type bmp)
 <imagens/p2.jpg>
 File: imagens/p3.jpg Graphic file (type bmp)
 <imagens/p3.jpg>
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[21
+
+]
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [22
@@ -2431,9 +2431,25 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [23
 
 ]
+\openout4 = `SLIDES.vrb'.
+
+(SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [24
+
+]
+\openout4 = `SLIDES.vrb'.
+
+(SLIDES.vrb)
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[25
+
+]
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[26
 
 ]
 \tf@nav=\write6
@@ -2445,22 +2461,22 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `SLIDES.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 569.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 569.
 (SLIDES.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 548.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 548.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 569.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 569.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45934 strings out of 427671
- 904788 string characters out of 3149234
- 1149317 words of memory out of 3000000
- 49291 multiletter control sequences out of 15000+200000
+ 45956 strings out of 427671
+ 905127 string characters out of 3149234
+ 1149501 words of memory out of 3000000
+ 49309 multiletter control sequences out of 15000+200000
  554592 words of font info for 107 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,14n,115p,796b,1166s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on SLIDES.pdf (24 pages).
+Output written on SLIDES.pdf (26 pages).

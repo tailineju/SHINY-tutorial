@@ -255,7 +255,6 @@
 
 \begin{enumerate}
 \item O que é o Shiny?
-\item Exemplos práticos
 \item Estrutura básica
 \begin{enumerate}
 \item User Interface
@@ -279,12 +278,6 @@
 \begin{frame}{O QUE É O SHINY}
 \protect\hypertarget{o-que-e-o-shiny}{}
 
-shiny texto texto texto texto texto texto texto texto texto vtexto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto
-
 \end{frame}
 
 \begin{frame}{INTERATIVIDADE}
@@ -306,9 +299,6 @@ texto texto texto texto
 \end{figure}
 
 \end{frame}
-
-\hypertarget{exemplos-praticos}{%
-\section{EXEMPLOS PRÁTICOS}\label{exemplos-praticos}}
 
 \begin{frame}[fragile]{ESTRUTURA}
 \protect\hypertarget{estrutura}{}
@@ -422,10 +412,12 @@ verbatimTextOutput() & Texto \\
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(shiny)}
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
-  \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}\DataTypeTok{label=} \StringTok{"Escolha um número", value = 25, min = 1, max = 100), }
-\StringTok{  plotOutput("}\NormalTok{hist}\StringTok{"))}
-\StringTok{server <- function(input, output) \{\}}
-\StringTok{shinyApp(ui = ui, server = server)}
+  \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}
+              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }
+              \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
+  \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"hist"}\NormalTok{))}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -506,13 +498,13 @@ htmlOutput() & renderUI \\
 \begin{Highlighting}[]
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
   \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{, }
-    \DataTypeTok{label =} \StringTok{"Escolha um número", }
-\StringTok{    value = 25, min = 1, max = 100), }
-\StringTok{  plotOutput("}\NormalTok{hist}\StringTok{"))}
-\StringTok{server <- function(input, output) \{}
-\StringTok{  output$hist <- renderPlot(\{}
-\StringTok{    hist(rnorm(input$num))\})\}}
-\StringTok{shinyApp(ui = ui, server = server)}
+    \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }
+    \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
+  \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"hist"}\NormalTok{))}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
+\NormalTok{  output}\OperatorTok{$}\NormalTok{hist <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
+    \KeywordTok{hist}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(input}\OperatorTok{$}\NormalTok{num))\})\}}
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -534,15 +526,44 @@ htmlOutput() & renderUI \\
 \hypertarget{aplicacoes}{%
 \section{APLICAÇÕES}\label{aplicacoes}}
 
-\begin{frame}{REFERÊNCIAS}
-\protect\hypertarget{referencias}{}
+\hypertarget{anexos}{%
+\section{ANEXOS}\label{anexos}}
 
-shiny texto texto texto texto texto texto texto texto texto vtexto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto
+\begin{frame}[fragile]{APLICAÇÕES I}
+\protect\hypertarget{aplicacoes-i}{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{()}
+
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
+
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
+\end{Highlighting}
+\end{Shaded}
 
 \end{frame}
+
+\begin{frame}[fragile]{APLICAÇÕES II}
+\protect\hypertarget{aplicacoes-ii}{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{()}
+
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
+
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\hypertarget{referencias}{%
+\section{REFERÊNCIAS}\label{referencias}}
 
 \end{document}
