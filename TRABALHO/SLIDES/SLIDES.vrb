@@ -1,0 +1,121 @@
+\frametitle{APLICAÇÕES I}
+\protect\hypertarget{aplicacoes-i}{}
+
+\tiny\{
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Aqui é só manipulação dos dados pra ficar no formato certo}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)}
+\NormalTok{dados <-}\StringTok{ }\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"amazon.csv"}\NormalTok{)}
+\NormalTok{dados}\OperatorTok{$}\NormalTok{number <-}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(dados}\OperatorTok{$}\NormalTok{number)}
+\NormalTok{dados}\OperatorTok{$}\NormalTok{number <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(dados}\OperatorTok{$}\NormalTok{number)}
+\NormalTok{dados}\OperatorTok{$}\NormalTok{X <-}\StringTok{ }\OtherTok{NULL}
+\NormalTok{dados}\OperatorTok{$}\NormalTok{X}\FloatTok{.1}\NormalTok{ <-}\StringTok{ }\OtherTok{NULL}
+\NormalTok{dados <-}\StringTok{ }\NormalTok{dados }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{date =} \KeywordTok{unite}\NormalTok{(dados,year_month,month,year,}\DataTypeTok{sep =} \StringTok{"-"}\NormalTok{)}\OperatorTok{$}\NormalTok{year_month)}
+\NormalTok{dados <-}\StringTok{ }\NormalTok{dados }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{dias =} \KeywordTok{rep}\NormalTok{(}\StringTok{"01"}\NormalTok{,}\KeywordTok{length}\NormalTok{(dados}\OperatorTok{$}\NormalTok{date)))}
+\NormalTok{dados <-}\StringTok{ }\KeywordTok{unite}\NormalTok{(dados,data,date,dias,}\DataTypeTok{sep =} \StringTok{"-"}\NormalTok{)}
+\NormalTok{dados}\OperatorTok{$}\NormalTok{data <-}\StringTok{ }\KeywordTok{myd}\NormalTok{(dados}\OperatorTok{$}\NormalTok{data)}
+
+\CommentTok{# Aqui começa o shiny}
+\KeywordTok{library}\NormalTok{(shiny)}
+
+\CommentTok{### Definir UI para a aplicacao}
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(    }
+
+  \CommentTok{# Titulo}
+  \KeywordTok{titlePanel}\NormalTok{(}\StringTok{"Queimadas no Brasil"}\NormalTok{),}
+
+  \CommentTok{# Gerar a tabela de escolha dos meses e estados}
+  \KeywordTok{sidebarLayout}\NormalTok{(      }
+
+    \CommentTok{# Define the sidebar with one input}
+    \KeywordTok{sidebarPanel}\NormalTok{(}
+      \KeywordTok{selectInput}\NormalTok{(}\StringTok{"mes"}\NormalTok{, }\StringTok{"Mes:"}\NormalTok{, }
+                  \DataTypeTok{choices=}\KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Jan"}\NormalTok{,}\StringTok{"Feb"}\NormalTok{,}\StringTok{"Mar"}\NormalTok{,}\StringTok{"Apr"}\NormalTok{,}\StringTok{"May"}\NormalTok{,}\StringTok{"June"}\NormalTok{,}\StringTok{"July"}\NormalTok{,}\StringTok{"Aug"}\NormalTok{,}\StringTok{"Sept"}\NormalTok{,}\StringTok{"Oct"}\NormalTok{,}\StringTok{"Nov"}\NormalTok{,}\StringTok{"Dec"}\NormalTok{)),}
+      \KeywordTok{selectInput}\NormalTok{(}\StringTok{"estado"}\NormalTok{,}\StringTok{"Estado:"}\NormalTok{,}
+                  \DataTypeTok{choices =} \KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Acre"}\NormalTok{,}\StringTok{"Alagoas"}\NormalTok{,}\StringTok{"Amapa"}\NormalTok{,}\StringTok{"Amazonas"}\NormalTok{,}\StringTok{"Bahia"}\NormalTok{,}
+                              \StringTok{"Ceara"}\NormalTok{,}\StringTok{"Distrito Federal"}\NormalTok{,}\StringTok{"Espirito Santo"}\NormalTok{,}\StringTok{"Goias"}\NormalTok{,}
+                              \StringTok{"Maranhao"}\NormalTok{,}\StringTok{"Mato Grosso"}\NormalTok{,}\StringTok{"Minas Gerais"}\NormalTok{,}\StringTok{"Paraiba"}\NormalTok{,}
+                              \StringTok{"Pernambuco"}\NormalTok{,}\StringTok{"Piau"}\NormalTok{,}\StringTok{"Rio"}\NormalTok{,}\StringTok{"Rondonia"}\NormalTok{,}\StringTok{"Roraima"}\NormalTok{)),}
+      \KeywordTok{hr}\NormalTok{(),}
+      \KeywordTok{helpText}\NormalTok{(}\StringTok{"Dados fornecidos em }
+\StringTok{               http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif"}\NormalTok{)}
+\NormalTok{      ),}
+
+    \CommentTok{# Criar um espaco para o grafico}
+    \KeywordTok{mainPanel}\NormalTok{(}
+      \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"Grafico"}\NormalTok{)  }
+\NormalTok{    )}
+
+\NormalTok{    )}
+\NormalTok{)}
+\CommentTok{# Definir o server}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
+
+  \CommentTok{# preencher o espaço criado com o grafico}
+\NormalTok{  output}\OperatorTok{$}\NormalTok{Grafico <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
+    \ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{mes }\OperatorTok{==}\StringTok{ "Todos"}\NormalTok{)\{}
+      \ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{estado }\OperatorTok{==}\StringTok{ "Todos"}\NormalTok{)\{}
+        \KeywordTok{ggplot}\NormalTok{(dados,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{data,}\DataTypeTok{y=}\NormalTok{number)) }\OperatorTok{+}
+\StringTok{          }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{          }\KeywordTok{geom_jitter}\NormalTok{(}\DataTypeTok{width =} \DecValTok{20}\NormalTok{,}\DataTypeTok{height =} \FloatTok{0.2}\NormalTok{) }\OperatorTok{+}
+\StringTok{          }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{,}\DataTypeTok{formula =}\NormalTok{ y}\OperatorTok{~}\NormalTok{x,}\DataTypeTok{se =}\NormalTok{ F)}\OperatorTok{+}
+\StringTok{          }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Anos"}\NormalTok{) }\OperatorTok{+}
+\StringTok{          }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Numero de queimadas"}\NormalTok{)}\OperatorTok{+}
+\StringTok{          }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{          }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Numero de queimadas por ano"}\NormalTok{)}
+\NormalTok{      \}}\ControlFlowTok{else}\NormalTok{\{}
+      \KeywordTok{ggplot}\NormalTok{(dados }\OperatorTok{%>%}
+\StringTok{               }\KeywordTok{filter}\NormalTok{(state }\OperatorTok{==}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{estado),}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{data,}\DataTypeTok{y=}\NormalTok{number)) }\OperatorTok{+}
+\StringTok{        }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{        }\KeywordTok{geom_jitter}\NormalTok{(}\DataTypeTok{width =} \DecValTok{20}\NormalTok{,}\DataTypeTok{height =} \FloatTok{0.2}\NormalTok{) }\OperatorTok{+}
+\StringTok{        }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{,}\DataTypeTok{formula =}\NormalTok{ y}\OperatorTok{~}\NormalTok{x,}\DataTypeTok{se =}\NormalTok{ F)}\OperatorTok{+}
+\StringTok{        }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Anos"}\NormalTok{) }\OperatorTok{+}
+\StringTok{        }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Numero de queimadas"}\NormalTok{)}\OperatorTok{+}
+\StringTok{        }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{        }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Numero de queimadas por ano"}\NormalTok{)\}\}}\ControlFlowTok{else}\NormalTok{\{}
+          \ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{estado }\OperatorTok{==}\StringTok{ "Todos"}\NormalTok{)\{}
+            \KeywordTok{ggplot}\NormalTok{(dados }\OperatorTok{%>%}
+\StringTok{                     }\KeywordTok{filter}\NormalTok{(month }\OperatorTok{==}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{mes),}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{data,}\DataTypeTok{y=}\NormalTok{number)) }\OperatorTok{+}
+\StringTok{              }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{              }\KeywordTok{geom_jitter}\NormalTok{(}\DataTypeTok{width =} \DecValTok{20}\NormalTok{,}\DataTypeTok{height =} \FloatTok{0.2}\NormalTok{) }\OperatorTok{+}
+\StringTok{              }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{,}\DataTypeTok{formula =}\NormalTok{ y}\OperatorTok{~}\NormalTok{x,}\DataTypeTok{se =}\NormalTok{ F)}\OperatorTok{+}
+\StringTok{              }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Anos"}\NormalTok{) }\OperatorTok{+}
+\StringTok{              }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Numero de queimadas"}\NormalTok{)}\OperatorTok{+}
+\StringTok{              }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{              }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Numero de queimadas por ano"}\NormalTok{)}
+\NormalTok{          \}}\ControlFlowTok{else}\NormalTok{\{}
+    \KeywordTok{ggplot}\NormalTok{(dados }\OperatorTok{%>%}
+\StringTok{             }\KeywordTok{filter}\NormalTok{(month }\OperatorTok{==}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{mes)}\OperatorTok{%>%}
+\StringTok{             }\KeywordTok{filter}\NormalTok{(state }\OperatorTok{==}\StringTok{ }\NormalTok{input}\OperatorTok{$}\NormalTok{estado),}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{data,}\DataTypeTok{y=}\NormalTok{number)) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_jitter}\NormalTok{(}\DataTypeTok{width =} \DecValTok{20}\NormalTok{,}\DataTypeTok{height =} \FloatTok{0.2}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{,}\DataTypeTok{formula =}\NormalTok{ y}\OperatorTok{~}\NormalTok{x,}\DataTypeTok{se =}\NormalTok{ F)}\OperatorTok{+}
+\StringTok{      }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Anos"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Numero de queimadas"}\NormalTok{)}\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Numero de queimadas por ano"}\NormalTok{)}
+\NormalTok{  \}\}\})}
+\NormalTok{\}}
+\CommentTok{# Rodar o shiny}
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
+\end{Highlighting}
+\end{Shaded}
+
+\} \#\# APLICAÇÕES II
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{()}
+
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
+
+\KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
+\end{Highlighting}
+\end{Shaded}
+
