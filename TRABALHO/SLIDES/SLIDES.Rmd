@@ -8,7 +8,6 @@ output:
     includes:
      in_header: Estilo.txt
      theme: "fibeamer"
-     highlight: "tango"
     latex_engine: xelatex
 ---
 
@@ -23,7 +22,6 @@ knitr::opts_chunk$set(dev='pdf')
 
 ```
 
-
 ## SUMÁRIO
 
 \begin{enumerate}
@@ -37,17 +35,12 @@ knitr::opts_chunk$set(dev='pdf')
 \item Referências
 \end{enumerate}
 
-
 ##
 \begin{textblock*}{0cm}(0cm,-.0cm)
 \includegraphics[width=\paperwidth, height=\paperheight]{imagens/logo}
 \end{textblock*}
 
 ## O QUE É O SHINY
-
-shiny texto texto texto texto texto texto texto texto texto vtexto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
 
 
 ## INTERATIVIDADE
@@ -63,9 +56,6 @@ texto texto texto texto texto texto texto texto texto texto texto texto texto te
 \begin{figure}
 \includegraphics[width=110mm]{imagens/cxv}
 \end{figure}
-
-
-# EXEMPLOS PRÁTICOS
 
 
 ## ESTRUTURA
@@ -155,7 +145,9 @@ verbatimTextOutput() & Texto \\
 ```{r output, eval=FALSE, include=TRUE}
 library(shiny)
 ui <- fluidPage(
-  sliderInput(inputId = "num",label= "Escolha um número", value = 25, min = 1, max = 100), 
+  sliderInput(inputId = "num",
+              value = 25, 
+              min = 1, max = 100), 
   plotOutput("hist"))
 server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
@@ -208,10 +200,6 @@ htmlOutput() & renderUI \\
 \end{tabular}
 \end{table}
 
-
-
-
-
 ## CONFIGURANDO O OUTPUT
 
 \only<2>{
@@ -225,8 +213,8 @@ htmlOutput() & renderUI \\
 ```{r config, eval=FALSE, include=TRUE}
 ui <- fluidPage(
   sliderInput(inputId = "num", 
-    label = "Escolha um número", 
-    value = 25, min = 1, max = 100), 
+    value = 25, 
+    min = 1, max = 100), 
   plotOutput("hist"))
 server <- function(input, output) {
   output$hist <- renderPlot({
@@ -245,15 +233,30 @@ shinyApp(ui = ui, server = server)
 
 # APLICAÇÕES
 
-## REFERÊNCIAS
+# ANEXOS
 
-shiny texto texto texto texto texto texto texto texto texto vtexto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+## APLICAÇÕES I
 
+```{r template, eval=FALSE, include=TRUE}
+library(shiny)
 
+ui <- fluidPage()
 
+server <- function(input, output) {}
 
+shinyApp(ui = ui, server = server)
+```
 
+## APLICAÇÕES II
 
+```{r template, eval=FALSE, include=TRUE}
+library(shiny)
 
+ui <- fluidPage()
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+
+# REFERÊNCIAS
