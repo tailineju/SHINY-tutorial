@@ -19,4 +19,85 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
+# ANEXOS
+
+## APLICAÇÕES I
+```{r app1, eval=FALSE, include=TRUE}
+pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)
+dados <- read.csv2("amazon.csv")
+dados$number <- as.vector(dados$number)
+dados$number <- as.numeric(dados$number)
+dados$X <- NULL
+dados$X.1 <- NULL
+dados <- dados %>%
+  mutate(date = unite(dados,year_month,month,year,sep = "-")$year_month)
+dados <- dados %>%
+  mutate(dias = rep("01",length(dados$date)))
+dados <- unite(dados,data,date,dias,sep = "-")
+dados$data <- myd(dados$data)
+library(shiny)
+ui <- fluidPage(    
+  titlePanel("Queimadas no Brasil"),
+  sidebarLayout(sidebarPanel(selectInput("mes", "Mes:", choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
+      selectInput("estado","Estado:", choices=c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia","Ceara","Distrito Federal","Espirito Santo","Goias","Maranhao","Mato Grosso","Minas Gerais","Paraiba","Pernambuco","Piau","Rio","Rondonia","Roraima")),
+      hr(), helpText("Dados fornecidos em http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")),
+    mainPanel(plotOutput("Grafico"))))
+server <- function(input, output) {
+  output$Grafico <- renderPlot({
+    if(input$mes == "Todos"){
+      if(input$estado == "Todos"){
+        ggplot(dados,aes(x=data,y=number)) +
+          geom_point() +
+          geom_jitter(width = 20,height = 0.2) +
+          geom_smooth(method = "lm",formula = y~x,se = F)+
+          xlab("Anos") +
+          ylab("Numero de queimadas")+
+          theme_classic() +
+          ggtitle("Numero de queimadas por ano")
+      }else{
+      ggplot(dados %>%
+               filter(state == input$estado),aes(x=data,y=number)) +
+        geom_point() +
+        geom_jitter(width = 20,height = 0.2) +
+        geom_smooth(method = "lm",formula = y~x,se = F)+
+        xlab("Anos") +
+        ylab("Numero de queimadas")+
+        theme_classic() +
+        ggtitle("Numero de queimadas por ano")}}else{
+          if(input$estado == "Todos"){
+            ggplot(dados %>%
+                     filter(month == input$mes),aes(x=data,y=number)) +
+              geom_point() +
+              geom_jitter(width = 20,height = 0.2) +
+              geom_smooth(method = "lm",formula = y~x,se = F)+
+              xlab("Anos") +
+              ylab("Numero de queimadas")+
+              theme_classic() +
+              ggtitle("Numero de queimadas por ano")
+          }else{
+    ggplot(dados %>%
+             filter(month == input$mes)%>%
+             filter(state == input$estado),aes(x=data,y=number)) +
+      geom_point() +
+      geom_jitter(width = 20,height = 0.2) +
+      geom_smooth(method = "lm",formula = y~x,se = F)+
+      xlab("Anos") +
+      ylab("Numero de queimadas")+
+      theme_classic() +
+      ggtitle("Numero de queimadas por ano")
+  }}})}
+shinyApp(ui = ui, server = server)
+```
+
+## APLICAÇÕES II
+
+```{r app2, eval=FALSE, include=TRUE}
+library(shiny)
+
+ui <- fluidPage()
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
 

@@ -563,15 +563,10 @@ htmlOutput() & renderUI \\
 \KeywordTok{library}\NormalTok{(shiny)}
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(    }
   \KeywordTok{titlePanel}\NormalTok{(}\StringTok{"Queimadas no Brasil"}\NormalTok{),}
-  \KeywordTok{sidebarLayout}\NormalTok{(}
-    \KeywordTok{sidebarPanel}\NormalTok{(}
-      \KeywordTok{selectInput}\NormalTok{(}\StringTok{"mes"}\NormalTok{, }\StringTok{"Mes:"}\NormalTok{, }
-                  \DataTypeTok{choices=}\KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Jan"}\NormalTok{,}\StringTok{"Feb"}\NormalTok{,}\StringTok{"Mar"}\NormalTok{,}\StringTok{"Apr"}\NormalTok{,}\StringTok{"May"}\NormalTok{,}\StringTok{"June"}\NormalTok{,}\StringTok{"July"}\NormalTok{,}\StringTok{"Aug"}\NormalTok{,}\StringTok{"Sept"}\NormalTok{,}\StringTok{"Oct"}\NormalTok{,}\StringTok{"Nov"}\NormalTok{,}\StringTok{"Dec"}\NormalTok{)),}
-      \KeywordTok{selectInput}\NormalTok{(}\StringTok{"estado"}\NormalTok{,}\StringTok{"Estado:"}\NormalTok{,}
-                  \DataTypeTok{choices=}\KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Acre"}\NormalTok{,}\StringTok{"Alagoas"}\NormalTok{,}\StringTok{"Amapa"}\NormalTok{,}\StringTok{"Amazonas"}\NormalTok{,}\StringTok{"Bahia"}\NormalTok{,}\StringTok{"Ceara"}\NormalTok{,}\StringTok{"Distrito Federal"}\NormalTok{,}\StringTok{"Espirito Santo"}\NormalTok{,}\StringTok{"Goias"}\NormalTok{,}\StringTok{"Maranhao"}\NormalTok{,}\StringTok{"Mato Grosso"}\NormalTok{,}\StringTok{"Minas Gerais"}\NormalTok{,}\StringTok{"Paraiba"}\NormalTok{,}\StringTok{"Pernambuco"}\NormalTok{,}\StringTok{"Piau"}\NormalTok{,}\StringTok{"Rio"}\NormalTok{,}\StringTok{"Rondonia"}\NormalTok{,}\StringTok{"Roraima"}\NormalTok{)),}
+  \KeywordTok{sidebarLayout}\NormalTok{(}\KeywordTok{sidebarPanel}\NormalTok{(}\KeywordTok{selectInput}\NormalTok{(}\StringTok{"mes"}\NormalTok{, }\StringTok{"Mes:"}\NormalTok{, }\DataTypeTok{choices=}\KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Jan"}\NormalTok{,}\StringTok{"Feb"}\NormalTok{,}\StringTok{"Mar"}\NormalTok{,}\StringTok{"Apr"}\NormalTok{,}\StringTok{"May"}\NormalTok{,}\StringTok{"June"}\NormalTok{,}\StringTok{"July"}\NormalTok{,}\StringTok{"Aug"}\NormalTok{,}\StringTok{"Sept"}\NormalTok{,}\StringTok{"Oct"}\NormalTok{,}\StringTok{"Nov"}\NormalTok{,}\StringTok{"Dec"}\NormalTok{)),}
+      \KeywordTok{selectInput}\NormalTok{(}\StringTok{"estado"}\NormalTok{,}\StringTok{"Estado:"}\NormalTok{, }\DataTypeTok{choices=}\KeywordTok{c}\NormalTok{(}\StringTok{"Todos"}\NormalTok{,}\StringTok{"Acre"}\NormalTok{,}\StringTok{"Alagoas"}\NormalTok{,}\StringTok{"Amapa"}\NormalTok{,}\StringTok{"Amazonas"}\NormalTok{,}\StringTok{"Bahia"}\NormalTok{,}\StringTok{"Ceara"}\NormalTok{,}\StringTok{"Distrito Federal"}\NormalTok{,}\StringTok{"Espirito Santo"}\NormalTok{,}\StringTok{"Goias"}\NormalTok{,}\StringTok{"Maranhao"}\NormalTok{,}\StringTok{"Mato Grosso"}\NormalTok{,}\StringTok{"Minas Gerais"}\NormalTok{,}\StringTok{"Paraiba"}\NormalTok{,}\StringTok{"Pernambuco"}\NormalTok{,}\StringTok{"Piau"}\NormalTok{,}\StringTok{"Rio"}\NormalTok{,}\StringTok{"Rondonia"}\NormalTok{,}\StringTok{"Roraima"}\NormalTok{)),}
       \KeywordTok{hr}\NormalTok{(), }\KeywordTok{helpText}\NormalTok{(}\StringTok{"Dados fornecidos em http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif"}\NormalTok{)),}
-    \KeywordTok{mainPanel}\NormalTok{(}
-      \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"Grafico"}\NormalTok{))))}
+    \KeywordTok{mainPanel}\NormalTok{(}\KeywordTok{plotOutput}\NormalTok{(}\StringTok{"Grafico"}\NormalTok{))))}
 \NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
 \NormalTok{  output}\OperatorTok{$}\NormalTok{Grafico <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
     \ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{mes }\OperatorTok{==}\StringTok{ "Todos"}\NormalTok{)\{}
@@ -649,8 +644,9 @@ htmlOutput() & renderUI \\
   \url{https://shiny.rstudio.com/tutorial/}. Acesso em: setembro de
   2019.
 \item
-  PUC MINAS. \textbf{Abakos}, Belo Horizonte,v. 6, n.~2, p.~55-71, maio
-  2018
+  PUC MINAS. \textbf{Desenvolvimento de Aplicativos Web Com R e Shiny:}
+  inovações no ensino de Estatística. Belo Horizonte,v. 6, n.~2,
+  p.~55-71, maio 2018
 \item
   \textbf{Curso-R}. Disponível em:
   \url{http://material.curso-r.com/shiny/}. Acesso em: setembro de 2019.

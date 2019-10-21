@@ -260,15 +260,10 @@ dados$data <- myd(dados$data)
 library(shiny)
 ui <- fluidPage(    
   titlePanel("Queimadas no Brasil"),
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("mes", "Mes:", 
-                  choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
-      selectInput("estado","Estado:",
-                  choices=c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia","Ceara","Distrito Federal","Espirito Santo","Goias","Maranhao","Mato Grosso","Minas Gerais","Paraiba","Pernambuco","Piau","Rio","Rondonia","Roraima")),
+  sidebarLayout(sidebarPanel(selectInput("mes", "Mes:", choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
+      selectInput("estado","Estado:", choices=c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia","Ceara","Distrito Federal","Espirito Santo","Goias","Maranhao","Mato Grosso","Minas Gerais","Paraiba","Pernambuco","Piau","Rio","Rondonia","Roraima")),
       hr(), helpText("Dados fornecidos em http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")),
-    mainPanel(
-      plotOutput("Grafico"))))
+    mainPanel(plotOutput("Grafico"))))
 server <- function(input, output) {
   output$Grafico <- renderPlot({
     if(input$mes == "Todos"){
@@ -331,5 +326,5 @@ shinyApp(ui = ui, server = server)
 ## REFERÊNCIAS
 
 1. RSTUDIO INC. \textbf{Shiny from RStudio}. Disponível em: <https://shiny.rstudio.com/tutorial/>. Acesso em: setembro de 2019.
-2. PUC MINAS. \textbf{Abakos}, Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
+2. PUC MINAS. \textbf{Desenvolvimento de Aplicativos Web Com R e Shiny:} inovações no ensino de Estatística. Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
 3. \textbf{Curso-R}. Disponível em: <http://material.curso-r.com/shiny/>. Acesso em: setembro de 2019.
