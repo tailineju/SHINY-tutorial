@@ -93,6 +93,8 @@ DICA: Use `shiny::função` para verificar a syntax da função. Ex: `shiny::sli
 
 ### 2.1.2. FUNÇÕES OUTPUT
 
+O próximo passo é definir que tipo de saída desejamos. Para cada tipo de saída existe uma função que abaixo estão representadas com suas respectivas funcionalidades
+
 Função | Finalidade
 ------------- | -------------
 dataTableOutput() | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. A renderTable usa uma tabela HTML padrão, enquanto a renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
@@ -176,7 +178,11 @@ shinyApp(ui = ui, server = server)
 
 # 3. RESULTADO
 
+### Defaut
+<p> ![](p2.jpg)
 
+### Com interação 
+<p> ![](p3.jpg) 
 
 # 4. REFERÊNCIAS
 
@@ -187,7 +193,114 @@ shinyApp(ui = ui, server = server)
 # 5. ANEXOS
 
 ## 5.1. APLICAÇÕES I
+
 ```{r app1, eval=FALSE, include=TRUE}
+library(shiny)
+
+ui <- fluidPage(
+    titlePanel("Upload de arquivos"),
+    sidebarLayout(
+        sidebarPanel(
+            fileInput("idarquivo", "Selecione o seu arquivo", 
+                      accept = c('text/csv', 'text/comma-separated-values',
+                                 'text/tab-separated-values', '.csv', '.tsv')),
+            tags$hr(),
+            checkboxInput('header', "Header", TRUE),
+            radioButtons('sep', 'Separador de colunas', 
+                         c("virgula" = ',', "Ponto e virgula" = ';', "Tab"= '\t'), ',')
+        ),
+        
+        mainPanel(
+            actionButton("botao", "Ler o arquivo")
+        )
+    )
+)
+
+options(shiny.maxRequestSize = 100*1024^2)
+server <- function(input, output){
+    observeEvent(input$botao, {
+        print(input$header)
+        arquivo <- read.csv(input$idarquivo$datapath, 
+                            header = input$header, sep = input$sep)
+        print(arquivo)
+    })
+}
+
+shinyApp(ui, server)
+```
+
+## 5.2. APLICAÇÕES II
+
+```{r app2, eval=FALSE, include=TRUE}
+
+install.packages("tidyverse")
+library(shiny)gg
+library(plotly)
+library(tidyverse)
+  
+
+df <- read.csv("WorldCups.csv")
+
+  
+  
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("Copa do Mundo"),
+  
+  sidebarPanel(
+    h3("Ideal Points Estimation"),
+    # Select Justices name here
+    selectizeInput("name",
+                   label = "Country Name(s) of Interest",
+                   choices = (df$Winner),
+                   multiple = T,
+                   options = list(maxItems = 5, placeholder = 'Select a name'),
+                   selected = "United States of America"),
+    # Term plot
+    plotOutput("termPlot", height = 200),
+    helpText("Data: Bailey, Michael, Anton  Strezhnev and Erik Voeten. Forthcoming. 
+             'Estimating Dynamic State Preferences from United Nations Voting Data.' 
+             Journal of Conflict Resolution. ")
+  ),
+  
+  # Show a plot of the generated distribution
+  mainPanel(
+    plotOutput("trendPlot")
+  )
+)
+
+server <- function(input, output, session) {
+  output$trendPlot <- renderPlot({
+    
+    if (length(input$Winner) == 0) {
+      print("Please select at least one country")
+    } else {
+      df_trend <- df[df$Winner == input$Winner, ]
+      ggplot(df_trend) +
+        geom_line(aes(x = Year, by = Winner, color = Winner)) +
+        labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
+        scale_colour_hue("clarity", l = 70, c = 150) + ggthemes::theme_few()
+    }
+    
+  })
+}
+
+tamanho <- length()
+
+df_trend <- df[df$Winner == df$Winner, ]
+ggplot(df_trend) +
+  geom_line(aes(x = Year, y = GoalsScored, by = Winner, color = Winner)) +
+  labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
+  scale_colour_hue("clarity", l = 70, c = 150) 
+
+shinyApp(ui = ui, server = server)
+
+```
+
+
+## 5.3. APLICAÇÕES III
+```{r app3, eval=FALSE, include=TRUE}
 pacman::p_load(ggplot2, tidyverse, tidyr, dplyr, lubridate, stringr,broom)
 dados <- read.csv2("amazon.csv")
 dados$number <- as.vector(dados$number)
@@ -261,68 +374,5 @@ server <- function(input, output) {
       ggtitle("Numero de queimadas por ano")
   }}})}
 shinyApp(ui = ui, server = server)
-```
-
-## 5.2. APLICAÇÕES II
-
-```{r app2, eval=FALSE, include=TRUE}
-library(shiny)gg
-library(plotly)
-library(tidyverse)
-  
-
-df <- read.csv("WorldCups.csv")
-
-  
-  
-ui <- fluidPage(
-  
-  # Application title
-  titlePanel("Copa do Mundo"),
-  
-  sidebarPanel(
-    h3("Ideal Points Estimation"),
-    # Select Justices name here
-    selectizeInput("name",
-                   label = "Country Name(s) of Interest",
-                   choices = (df$Winner),
-                   multiple = T,
-                   options = list(maxItems = 5, placeholder = 'Select a name'),
-                   selected = "United States of America"),
-    # Term plot
-    plotOutput("termPlot", height = 200),
-    helpText("Data: Bailey, Michael, Anton  Strezhnev and Erik Voeten. Forthcoming.  
-             'Estimating Dynamic State Preferences from United Nations Voting Data.' 
-             Journal of Conflict Resolution. ")
-  ),
-  
-  # Show a plot of the generated distribution
-  mainPanel(
-    plotOutput("trendPlot")
-  )
-)
-
-server <- function(input, output, session) {
-  output$trendPlot <- renderPlot({
-    
-    if (length(input$Winner) == 0) {
-      print("Please select at least one country")
-    } else {
-      df_trend <- df[df$Winner == input$Winner, ]
-      ggplot(df_trend) +
-        geom_line(aes(x = Year, by = Winner, color = Winner)) +
-        labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
-        scale_colour_hue("clarity", l = 70, c = 150) + ggthemes::theme_few()}})}
-
-tamanho <- length()
-
-df_trend <- df[df$Winner == df$Winner, ]
-ggplot(df_trend) +
-  geom_line(aes(x = Year, y = GoalsScored, by = Winner, color = Winner)) +
-  labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
-  scale_colour_hue("clarity", l = 70, c = 150) 
-
-shinyApp(ui = ui, server = server)
-
 ```
 
