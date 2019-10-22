@@ -37,14 +37,14 @@ shinyApp(ui = ui, server = server)
 
 ## 2.1. USER INTERFACE
 Tudo o que será apresentado ao usuário está guardado no objeto `ui`, que, no final, se analisarmos é um código HTML.
-Na tabela abaixo estão listadas as funções utilizadas r elacionadas a estrutura da página na UI e suas respectivas finalidades: 
+Na tabela abaixo estão listadas as funções utilizadas relacionadas a estrutura da página na UI e suas respectivas finalidades: 
 
 Função | Finalidade
 ------------- | -------------
 library(shiny) | Carregar o pacote Shiny.
 shinyUI(fluidPage) | Criar uma interface com o usuário.
 titlePanel() | Criar um painel contendo um título do aplicativo.
-WsidebarLayout | Criar um layout com uma barra lateral e área principal. A barra lateral é exibida com uma cor de fundo distinta e geralmente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e geralmente contém saídas.
+sidebarLayout() | Criar um layout com uma barra lateral e área principal. A barra lateral é exibida com uma cor de fundo distinta e geralmente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e geralmente contém saídas.
 sidebarPanel() | Criar um painel com barra lateral, que contenha controles de entrada que, por sua vez, possam ser passados para SidebarLayout.
 mainPanel() | Criar um painel principal contendo elementos de saída que, por sua vez, pode ser passado para sidebarLayout
 
@@ -88,20 +88,20 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-DICA: Use `?shiny::função` para verificar a syntax da função. Ex: `?shiny::sliderInput`
+DICA: Use `shiny::função` para verificar a syntax da função. Ex: `shiny::sliderInput`
 
 
 ### 2.1.2. FUNÇÕES OUTPUT
 
 Função | Finalidade
 ------------- | -------------
-dataTableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. A renderTable usa uma tabela HTML padrão, enquanto a renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
-imageOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
-plotOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
-verbatimTextOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo.
-tableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. O renderTable usa uma tabela HTML padrão, enquanto o renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
-textOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo. O texto será incluído dentro de uma tag HTML div por padrão.
-UiOutput & htmlOutput | Renderizar uma variável de saída reativa como HTML dentro de uma página de aplicativo. O texto será incluído em uma tag HTML.
+dataTableOutput() | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. A renderTable usa uma tabela HTML padrão, enquanto a renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+imageOutput() | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+plotOutput() | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+verbatimTextOutput() | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo.
+tableOutput() | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. O renderTable usa uma tabela HTML padrão, enquanto o renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+textOutput() | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo. O texto será incluído dentro de uma tag HTML div por padrão.
+UiOutput() & htmlOutput() | Renderizar uma variável de saída reativa como HTML dentro de uma página de aplicativo. O texto será incluído em uma tag HTML.
 
 
 ### Adicionando ao código temos, então:
@@ -124,12 +124,12 @@ shinyApp(ui = ui, server = server)
 
 ## 2.2. SERVER
 
-Com a interface do usuário estruturada, é necessário agora implementar a função server(). Onde serão configurados os outputs vistos pelo usuário a partir dos valores dos inputs que o ele escolher.
+Com a interface do usuário estruturada, é necessário agora implementar a função server(). Onde serão configurados os outputs vistos pelo usuário a partir dos valores dos inputs escolhidos.
 
 Função | Finalidade
 ------------- | -------------
 library(shiny) | Carregar o pacote Shiny.
-shinyServer() | Definir a lógica do servidor do aplicativo Shiny. Issogeralmente envolve a criação de funções que mapeiam entradas de usuários para vários tipos de saída.
+shinyServer() | Definir a lógica do servidor do aplicativo Shiny. Isso geralmente envolve a criação de funções que mapeiam entradas de usuários para vários tipos de saída.
 function(input,output){} | Funções render (funções do R)
 
 ### 2.2.1. REATIVIDADE

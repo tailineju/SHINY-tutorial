@@ -15,23 +15,24 @@ dados$data <- myd(dados$data)
 # Aqui começa o shiny
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Definir o UI
 ui <- fluidPage(    
   shinythemes::themeSelector(),
-  # Give the page a title
+  # Dar um titulo
   titlePanel("Queimadas no Brasil"),
+  # Gerar a opcao de escolha das datas
   dateRangeInput('dateRange',
                  label = 'Periodo analizado',
                  start = Sys.Date() - 2, end = Sys.Date() + 2
   ),
   
-  # Generate a row with a sidebar
+  # Gerar a opcao de escolha dos meses e estados
   sidebarLayout(      
-    
-    # Define the sidebar with one input
     sidebarPanel(
+      # Gerar as opcoes de meses
       selectInput("mes", "Mes:", 
                   choices=c("Todos","Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec")),
+      # Gerar as opcoes de estados
       selectInput("estado","Estado:",
                   choices = c("Todos","Acre","Alagoas","Amapa","Amazonas","Bahia",
                               "Ceara","Distrito Federal","Espirito Santo","Goias",
@@ -42,17 +43,17 @@ ui <- fluidPage(
                http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif")
       ),
     
-    # Create a spot for the barplot
+    # Criar um espaco para o grafico
     mainPanel(
       plotOutput("Grafico")  
     )
     
     )
 )
-# Define server logic required to draw a histogram
+# Definir o server
 server <- function(input, output) {
   
-  # Fill in the spot we created for a plot
+  # Preencher o espaco criado com o grafico
   output$Grafico <- renderPlot({
     if(input$mes == "Todos"){
       if(input$estado == "Todos"){
@@ -92,7 +93,6 @@ server <- function(input, output) {
               theme_classic() +
               ggtitle("Numero de queimadas por ano")
           }else{
-    # Render a barplot
     ggplot(dados %>%
              filter(month == input$mes)%>%
              filter(state == input$estado)%>%
@@ -107,5 +107,5 @@ server <- function(input, output) {
       ggtitle("Numero de queimadas por ano")
   }}})
 }
-# Run the application 
+# Rodar o shiny
 shinyApp(ui = ui, server = server)
