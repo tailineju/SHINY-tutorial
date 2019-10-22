@@ -26,9 +26,45 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-### FUNÇÕES 
+## USER INTERFACE 
 
-### FUNÇÕES RENDER
+Função | Finalidade
+------------- | -------------
+library(shiny) | Carregar o pacote Shiny.
+shinyUI(fluidPage) | Criar uma interface com o usuário.
+titlePanel() | Criar um painel contendo um título do aplicativo.
+WsidebarLayout | Criar um layout com uma barra lateral e área principal. A barra lateral é exibida com uma cor de fundo distinta e geralmente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e geralmente contém saídas.
+sidebarPanel() | Criar um painel com barra lateral, que contenha controles de entrada que, por sua vez, possam ser passados para SidebarLayout.
+mainPanel() | Criar um painel principal contendo elementos de saída que, por sua vez, pode ser passado para sidebarLayout
+
+### Funções Input
+
+Função | Finalidade
+------------- | -------------
+ActionButton |  Criar um botão de ação, cujo valor é inicialmente zero e aumenta em um cada vez que é pressionado.
+actionLink | Criar um link de ação cujo valor é, inicialmente, zero e aumenta em um cada vez que é pressionado.
+checkboxGroupInput | Criar um grupo de caixas de seleção que podem ser usadas para alternar várias opções de modo independente.
+checkboxInput | Criar uma caixa de seleção que pode ser usada para especificar valores lógicos.
+dateInput | Criar uma entrada de texto que, quando clicada, traz um calendário no qual o usuário pode clicar para selecionar datas.
+dateRangeInput | Criar um par de entradas de texto que, quando clicadas, trazem calendários nos quais o usuário pode clicar para selecionar datas.
+fileInput | Criar um controle de upload de arquivos que pode ser usado para carregar um ou mais arquivos.
+numericInput | Criar um controle de entrada para a entrada de valores numéricos.
+passwordInput | Criar um controle de senha para a entrada de senhas.
+radioButtons | Criar um conjunto de botões usados para selecionar um item de uma lista.
+selectInput | Criar uma lista de seleção que pode ser usada para escolher um único ou vários itens de uma lista de valores.
+sliderInput | Construir um widget de controle deslizante para selecionar um valor numérico de um intervalo.
+submitButton | Criar um botão de enviar para um aplicativo. Aplicativos que incluem um botão de enviar não atualizam automaticamente suas saídas quando as entradas são alteradas. É esperado até que o usuário clique explicitamente no botão enviar. O uso do submitButton,geralmente, é desencorajado em favor do ActionButton mais versátil.
+textInput | Criar um controle de entrada para a entrada de valores de texto não estruturados.
+
+## SERVER
+
+Função | Finalidade
+------------- | -------------
+library(shiny) | Carregar o pacote Shiny.
+shinyServer() | Definir a lógica do servidor do aplicativo Shiny. Issogeralmente envolve a criação de funções que mapeiam entradas de usuários para vários tipos de saída.
+function(input,output){} | Funções render (funções do R)
+
+### Funções Render
 
 Output (UI) | Render (Server)
 ------------- | -------------
