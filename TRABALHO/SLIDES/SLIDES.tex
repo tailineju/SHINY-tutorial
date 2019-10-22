@@ -497,7 +497,7 @@ htmlOutput() & renderUI \\
 \protect\hypertarget{configurando-o-output}{}
 
 \only<2>{
-\begin{textblock}{1}[0, .5](1.7, 11.6)
+\begin{textblock}{1}[0, .5](1.7, 12.2)
 \begin{tikzpicture}
     \draw[fibeamer@red, ultra thick,rounded corners] (0,0) rectangle (5.7,1.5);
 \end{tikzpicture}
@@ -506,6 +506,7 @@ htmlOutput() & renderUI \\
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
   \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}
               \DataTypeTok{label =} \OtherTok{NULL}\NormalTok{,}
