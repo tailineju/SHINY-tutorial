@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1571708325405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2006763666",
+    "id" : "504F1733",
+    "lastKnownWriteTime" : 1571708383,
+    "last_content_update" : 1571708383515,
+    "path" : "~/GitHub/SHINY/TRABALHO/APLICAÇÕES/APLICAÇÃO 2.R",
+    "project_path" : "TRABALHO/APLICAÇÕES/APLICAÇÃO 2.R",
+    "properties" : {
+        "cursorPosition" : "0,3",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

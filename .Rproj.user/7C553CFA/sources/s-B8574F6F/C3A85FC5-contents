@@ -16,6 +16,8 @@ output: pdf_document
 
 # ESTRUTURA
 
+## 
+
 ```{r estrut, eval=FALSE, include=TRUE}
 library(shiny)
 
@@ -26,7 +28,8 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-## USER INTERFACE 
+## USER INTERFACE
+Tudo o que será apresentado ao usuário está guardado no objeto `ui`, que nada mais é do que um código HTML.
 
 Função | Finalidade
 ------------- | -------------
@@ -36,6 +39,8 @@ titlePanel() | Criar um painel contendo um título do aplicativo.
 WsidebarLayout | Criar um layout com uma barra lateral e área principal. A barra lateral é exibida com uma cor de fundo distinta e geralmente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e geralmente contém saídas.
 sidebarPanel() | Criar um painel com barra lateral, que contenha controles de entrada que, por sua vez, possam ser passados para SidebarLayout.
 mainPanel() | Criar um painel principal contendo elementos de saída que, por sua vez, pode ser passado para sidebarLayout
+
+Com essas funções são criados apenas títulos e painéis. Não há nada com o que o usuário possa interagir. Para isso, precisamos adicionar os `inputs`.
 
 ### Funções Input
 
@@ -56,7 +61,21 @@ sliderInput | Construir um widget de controle deslizante para selecionar um valo
 submitButton | Criar um botão de enviar para um aplicativo. Aplicativos que incluem um botão de enviar não atualizam automaticamente suas saídas quando as entradas são alteradas. É esperado até que o usuário clique explicitamente no botão enviar. O uso do submitButton,geralmente, é desencorajado em favor do ActionButton mais versátil.
 textInput | Criar um controle de entrada para a entrada de valores de texto não estruturados.
 
+### Funções Output
+
+Função | Finalidade
+------------- | -------------
+dataTableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. A renderTable usa uma tabela HTML padrão, enquanto a renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+imageOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+plotOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+verbatimTextOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo.
+tableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. O renderTable usa uma tabela HTML padrão, enquanto o renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+textOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo. O texto será incluído dentro de uma tag HTML div por padrão.
+UiOutput & htmlOutput | Renderizar uma variável de saída reativa como HTML dentro de uma página de aplicativo. O texto será incluído em uma tag HTML.
+
 ## SERVER
+
+Com a interface do usuário estruturada, é necessário agora implementar a função server(). Onde serão configurados os outputs vistos pelo usuário a partir dos valores dos inputs que o ele escolher.
 
 Função | Finalidade
 ------------- | -------------

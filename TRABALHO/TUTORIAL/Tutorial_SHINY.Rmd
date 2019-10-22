@@ -56,6 +56,18 @@ sliderInput | Construir um widget de controle deslizante para selecionar um valo
 submitButton | Criar um botão de enviar para um aplicativo. Aplicativos que incluem um botão de enviar não atualizam automaticamente suas saídas quando as entradas são alteradas. É esperado até que o usuário clique explicitamente no botão enviar. O uso do submitButton,geralmente, é desencorajado em favor do ActionButton mais versátil.
 textInput | Criar um controle de entrada para a entrada de valores de texto não estruturados.
 
+### Funções Output
+
+Função | Finalidade
+------------- | -------------
+dataTableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. A renderTable usa uma tabela HTML padrão, enquanto a renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+imageOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+plotOutput | Renderizar um renderPlot ou renderImage dentro de uma página do aplicativo.
+verbatimTextOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo.
+tableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma página do aplicativo. O renderTable usa uma tabela HTML padrão, enquanto o renderDataTable usa a biblioteca JavaScript DataTables para criar uma tabela interativa com mais recursos.
+textOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo. O texto será incluído dentro de uma tag HTML div por padrão.
+UiOutput & htmlOutput | Renderizar uma variável de saída reativa como HTML dentro de uma página de aplicativo. O texto será incluído em uma tag HTML.
+
 ## SERVER
 
 Função | Finalidade
