@@ -11,16 +11,7 @@ output:
     latex_engine: xelatex
 ---
 
-```{r message=FALSE, warning=FALSE, include=T, paged.print=FALSE, results='hide', echo=F}
-library(knitr)
-library(tidyverse)
-library(reshape2)
-require(broom)
-opts_chunk$set(fig.align="center", fig.height=3.3, fig.width=4.2)
-opts_knit$set(out.format="latex")
-knitr::opts_chunk$set(dev='pdf')
 
-```
 
 ## SUMÁRIO
 
@@ -66,7 +57,8 @@ knitr::opts_chunk$set(dev='pdf')
 
 ## ESTRUTURA
 
-```{r template, eval=FALSE, include=TRUE}
+
+```r
 library(shiny)
 
 ui <- fluidPage()
@@ -108,7 +100,8 @@ mainPanel() & \small Criar um painel principal contendo elementos de saída. \\
 \end{textblock}
 }
 
-```{r input, eval=FALSE, include=TRUE}
+
+```r
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",
@@ -153,7 +146,8 @@ verbatimTextOutput() & Texto \\
 \end{textblock}
 }
 
-```{r output, eval=FALSE, include=TRUE}
+
+```r
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",
@@ -221,7 +215,8 @@ htmlOutput() & renderUI \\
 \end{textblock}
 }
 
-```{r config, eval=FALSE, include=TRUE}
+
+```r
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",

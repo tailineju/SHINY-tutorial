@@ -40,12 +40,6 @@ knitr::opts_chunk$set(dev='pdf')
 \includegraphics[width=\paperwidth, height=\paperheight]{imagens/logo}
 \end{textblock*}
 
-## O QUE É O SHINY
-\begin{itemize}
-\item Permite estruturar tanto a interface do usuário quanto o processamento de dados
-\item Criação de um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
-\end{itemize}
-
 ## INTERATIVIDADE
 
 \section{Instruções do Servidor (R)}
@@ -59,6 +53,15 @@ knitr::opts_chunk$set(dev='pdf')
 \begin{figure}
 \includegraphics[width=110mm]{imagens/cxv}
 \end{figure}
+
+## RESUMINDO
+
+\begin{itemize}
+\item Pacote do R
+\item Cria de um servidor que envia páginas web, \textbf{recebe} informações do usuário e \textbf{processa} os dados.
+\item Permite estruturar a interface do usuário \textbf{e} o processamento de dados.
+\item Vantagens para o programador e para o usuário.
+\end{itemize}
 
 
 ## ESTRUTURA
