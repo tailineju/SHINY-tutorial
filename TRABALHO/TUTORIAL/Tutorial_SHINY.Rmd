@@ -16,6 +16,12 @@ output: pdf_document
 
 # ESTRUTURA
 
+Um aplicativo em Shiny (ou Shiny app) é gerado por um único script chamado `app.R`. Esse script tem três componentes:
+
+* Um objeto com a interface do usuário (user side);
+* Uma função server() (server side);
+* Uma chamada para a função shinyApp().
+
 ```{r estrut, eval=FALSE, include=TRUE}
 library(shiny)
 
@@ -26,7 +32,8 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-## USER INTERFACE 
+# User Interface
+Tudo o que será apresentado ao usuário está guardado no objeto `ui`, que nada mais é do que um código HTML.
 
 Função | Finalidade
 ------------- | -------------
@@ -36,6 +43,8 @@ titlePanel() | Criar um painel contendo um título do aplicativo.
 WsidebarLayout | Criar um layout com uma barra lateral e área principal. A barra lateral é exibida com uma cor de fundo distinta e geralmente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e geralmente contém saídas.
 sidebarPanel() | Criar um painel com barra lateral, que contenha controles de entrada que, por sua vez, possam ser passados para SidebarLayout.
 mainPanel() | Criar um painel principal contendo elementos de saída que, por sua vez, pode ser passado para sidebarLayout
+
+Com as funções acima são criados apenas títulos e painéis. Não há nada com o que o usuário possa interagir. Para isso, precisamos adicionar os `inputs`.
 
 ### Funções Input
 
@@ -68,13 +77,26 @@ tableOutput | Renderizar uma renderTable ou renderDataTable dentro de uma págin
 textOutput | Renderizar uma variável de saída reativa como texto dentro de uma página de aplicativo. O texto será incluído dentro de uma tag HTML div por padrão.
 UiOutput & htmlOutput | Renderizar uma variável de saída reativa como HTML dentro de uma página de aplicativo. O texto será incluído em uma tag HTML.
 
-## SERVER
+# Server
+
+Com a interface do usuário estruturada, é necessário agora implementar a função server(). Onde serão configurados os outputs vistos pelo usuário a partir dos valores dos inputs que o ele escolher.
 
 Função | Finalidade
 ------------- | -------------
 library(shiny) | Carregar o pacote Shiny.
 shinyServer() | Definir a lógica do servidor do aplicativo Shiny. Issogeralmente envolve a criação de funções que mapeiam entradas de usuários para vários tipos de saída.
 function(input,output){} | Funções render (funções do R)
+
+### REATIVIDADE
+
+O fluxo de reatividade será sempre conduzido por valores e funções reativas. Os objetos dentro da lista input são os principais objetos reativos e as funções render_() são as principais funções reativas.
+
+Um fluxo básico seria o seguinte:
+
+1. O usuário altera o valor do input x.
+2. O valor reativo input$x é invalidado.
+3. Toda função reativa que depender de input$x é notificada.
+4. Essas funções verificam qual é o novo valor de input$x e atualizam suas saídas.
 
 ### Funções Render
 
@@ -177,12 +199,63 @@ shinyApp(ui = ui, server = server)
 ## APLICAÇÕES II
 
 ```{r app2, eval=FALSE, include=TRUE}
-library(shiny)
+library(shiny)gg
+library(plotly)
+library(tidyverse)
+  
 
-ui <- fluidPage()
+df <- read.csv("WorldCups.csv")
 
-server <- function(input, output) {}
+  
+  
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("Copa do Mundo"),
+  
+  sidebarPanel(
+    h3("Ideal Points Estimation"),
+    # Select Justices name here
+    selectizeInput("name",
+                   label = "Country Name(s) of Interest",
+                   choices = (df$Winner),
+                   multiple = T,
+                   options = list(maxItems = 5, placeholder = 'Select a name'),
+                   selected = "United States of America"),
+    # Term plot
+    plotOutput("termPlot", height = 200),
+    helpText("Data: Bailey, Michael, Anton  Strezhnev and Erik Voeten. Forthcoming.  
+             'Estimating Dynamic State Preferences from United Nations Voting Data.' 
+             Journal of Conflict Resolution. ")
+  ),
+  
+  # Show a plot of the generated distribution
+  mainPanel(
+    plotOutput("trendPlot")
+  )
+)
+
+server <- function(input, output, session) {
+  output$trendPlot <- renderPlot({
+    
+    if (length(input$Winner) == 0) {
+      print("Please select at least one country")
+    } else {
+      df_trend <- df[df$Winner == input$Winner, ]
+      ggplot(df_trend) +
+        geom_line(aes(x = Year, by = Winner, color = Winner)) +
+        labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
+        scale_colour_hue("clarity", l = 70, c = 150) + ggthemes::theme_few()}})}
+
+tamanho <- length()
+
+df_trend <- df[df$Winner == df$Winner, ]
+ggplot(df_trend) +
+  geom_line(aes(x = Year, y = GoalsScored, by = Winner, color = Winner)) +
+  labs(x = "Year", y = "Ideology", title = "Ideal Points for Countries") +
+  scale_colour_hue("clarity", l = 70, c = 150) 
 
 shinyApp(ui = ui, server = server)
+
 ```
 
