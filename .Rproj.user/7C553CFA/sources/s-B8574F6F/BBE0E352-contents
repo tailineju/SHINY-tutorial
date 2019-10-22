@@ -41,8 +41,10 @@ knitr::opts_chunk$set(dev='pdf')
 \end{textblock*}
 
 ## O QUE É O SHINY
-
-Estruturar tanto a interface com o usuário quanto o processamento de dados, geração de visualizações e modelagem, isto é, nós programamos tanto o user side quanto o server side numa tacada só. Assim, ao rodarmos o código, criamos um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
+\begin{itemize}
+\item Permite estruturar tanto a interface do usuário quanto o processamento de dados
+\item Criação de um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
+\end{itemize}
 
 ## INTERATIVIDADE
 
@@ -107,8 +109,8 @@ mainPanel() & \small Criar um painel principal contendo elementos de saída. \\
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",
-              value = 25, 
-              min = 1, max = 100) )
+              label = NULL,
+              value = 25, min = 1, max = 100) )
 server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
@@ -152,8 +154,8 @@ verbatimTextOutput() & Texto \\
 library(shiny)
 ui <- fluidPage(
   sliderInput(inputId = "num",
-              value = 25, 
-              min = 1, max = 100), 
+              label = NULL,
+              value = 25, min = 1, max = 100), 
   plotOutput("hist"))
 server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
@@ -218,9 +220,9 @@ htmlOutput() & renderUI \\
 
 ```{r config, eval=FALSE, include=TRUE}
 ui <- fluidPage(
-  sliderInput(inputId = "num", 
-    value = 25, 
-    min = 1, max = 100), 
+  sliderInput(inputId = "num",
+              label = NULL,
+              value = 25, min = 1, max = 100), 
   plotOutput("hist"))
 server <- function(input, output) {
   output$hist <- renderPlot({

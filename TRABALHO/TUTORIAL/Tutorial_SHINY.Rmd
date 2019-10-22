@@ -1,11 +1,18 @@
 ---
-title: "Tutorial Shiny"
+title: "TUTORIAL SHINY"
 author: "Davi, Eduardo, Gabriela, Jadson, Tailine"
-date: "Outubro de 2019"
 output: pdf_document
 ---
 
+
 # INTRODUÇÃO
+
+## O que é o Shiny?
+ 
+ * O código de uma aplicação Shiny nos permite estruturar tanto a interface com o usuário quanto o processamento de dados, geração de visualizações e modelagem, isto é, nós programamos tanto o **user side** quanto o **server side** numa tacada só. Assim, ao rodarmos o código, criamos um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
+
+* O Shiny é utilizado para criação de aplicações interativas na web que podem ser utilizadas na apresentação de dados de maneira **interativa** com inovadores recursos de visualização. Além disso, oferece uma interessante interface gráfica para disponibilizar aplicações para as pessoas que não têm familiaridade com R.
+
 
 # ESTRUTURA
 
@@ -19,11 +26,26 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
+### FUNÇÕES 
+
+### FUNÇÕES RENDER
+
+Output (UI) | Render (Server)
+------------- | -------------
+dataTableOutput() |  renderDataTable 
+imageOutput() | renderImage 
+plotOutput() | renderPlot 
+tableOutput() | renderTable 
+textOutput() | renderText 
+verbatimTextOutput() | renderPrint 
+uiOutput() | renderUI
+htmlOutput() | renderUI 
+
 # REFERÊNCIAS
 
-1. RSTUDIO INC. \textbf{Shiny from RStudio}. Disponível em: <https://shiny.rstudio.com/tutorial/>. Acesso em: setembro de 2019.
-2. PUC MINAS. \textbf{Desenvolvimento de Aplicativos Web Com R e Shiny:} inovações no ensino de Estatística. Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
-3. \textbf{Curso-R}. Disponível em: <http://material.curso-r.com/shiny/>. Acesso em: setembro de 2019.
+1. RSTUDIO INC. **Shiny from RStudio**. Disponível em: <https://shiny.rstudio.com/tutorial/>. Acesso em: setembro de 2019.
+2. PUC MINAS. **Desenvolvimento de Aplicativos Web Com R e Shiny:** inovações no ensino de Estatística. Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
+3. **Curso-R**. Disponível em: <http://material.curso-r.com/shiny/>. Acesso em: setembro de 2019.
 
 # ANEXOS
 

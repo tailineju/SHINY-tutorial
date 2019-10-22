@@ -1,25 +1,25 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1571683194088.000,
+    "created" : 1571696728342.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3666305236",
-    "id" : "9F6C38E4",
-    "lastKnownWriteTime" : 1571688959,
-    "last_content_update" : 1571688959635,
+    "hash" : "0",
+    "id" : "C3A85FC5",
+    "lastKnownWriteTime" : 1571705174,
+    "last_content_update" : 1571705174237,
     "path" : "~/GitHub/SHINY/TRABALHO/TUTORIAL/Tutorial_SHINY.Rmd",
     "project_path" : "TRABALHO/TUTORIAL/Tutorial_SHINY.Rmd",
     "properties" : {
-        "cursorPosition" : "57,6",
-        "scrollLine" : "48",
+        "cursorPosition" : "9,19",
+        "scrollLine" : "0",
         "tempName" : "Untitled1"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 1,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

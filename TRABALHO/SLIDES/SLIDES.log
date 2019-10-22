@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  21 OCT 2019 16:51
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  21 OCT 2019 21:57
 entering extended mode
 **./SLIDES.tex
 (SLIDES.tex
@@ -2232,19 +2232,45 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [3
 
 ]
+Requested font "zavmr7t" at 10.95pt
+Requested font "zavmr7t" at 7.665pt
+Requested font "zavmr7t" at 5.475pt
+LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
+(Font)              scaled to size 9.30756pt on input line 286.
+Requested font "zavmri7m" at 9.30756pt
+LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
+(Font)              scaled to size 6.51529pt on input line 286.
+Requested font "zavmri7m" at 6.51529pt
+LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
+(Font)              scaled to size 4.65378pt on input line 286.
+Requested font "zavmri7m" at 4.65378pt
+Requested font "zavmr7y" at 10.95pt
+Requested font "zavmr7y" at 7.665pt
+Requested font "zavmr7y" at 5.475pt
+Requested font "ex-iwonar" at 10.95pt
+Requested font "ex-iwonar" at 7.665pt
+Requested font "ex-iwonar" at 5.475pt
+Requested font "msam10" at 10.95pt
+Requested font "msam7" at 7.665pt
+Requested font "msam5" at 5.475pt
+Requested font "msbm10" at 10.95pt
+Requested font "msbm7" at 7.665pt
+Requested font "msbm5" at 5.475pt
+Missing character: There is no • in font zavmr7t!
+Missing character: There is no • in font zavmr7t!
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [4
 
 ]
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 298--298
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 297--297
 [][]  
  []
 
 File: imagens/trade.png Graphic file (type bmp)
 <imagens/trade.png>
 
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 298--298
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 297--297
 [] 
  []
 
@@ -2256,7 +2282,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/cxv.png Graphic file (type bmp)
 <imagens/cxv.png>
 
-Overfull \hbox (12.80356pt too wide) in paragraph at lines 307--307
+Overfull \hbox (12.80356pt too wide) in paragraph at lines 306--306
  [] 
  []
 
@@ -2286,32 +2312,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [7
 
 ]
-Requested font "zavmr7t" at 10.95pt
-Requested font "zavmr7t" at 7.665pt
-Requested font "zavmr7t" at 5.475pt
-LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 9.30756pt on input line 342.
-Requested font "zavmri7m" at 9.30756pt
-LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 6.51529pt on input line 342.
-Requested font "zavmri7m" at 6.51529pt
-LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 4.65378pt on input line 342.
-Requested font "zavmri7m" at 4.65378pt
-Requested font "zavmr7y" at 10.95pt
-Requested font "zavmr7y" at 7.665pt
-Requested font "zavmr7y" at 5.475pt
-Requested font "ex-iwonar" at 10.95pt
-Requested font "ex-iwonar" at 7.665pt
-Requested font "ex-iwonar" at 5.475pt
-Requested font "msam10" at 10.95pt
-Requested font "msam7" at 7.665pt
-Requested font "msam5" at 5.475pt
-Requested font "msbm10" at 10.95pt
-Requested font "msbm7" at 7.665pt
-Requested font "msbm5" at 5.475pt
-
-Overfull \hbox (17.53215pt too wide) in paragraph at lines 342--342
+Overfull \hbox (17.53215pt too wide) in paragraph at lines 341--341
  [] 
  []
 
@@ -2323,7 +2324,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/inpfun.jpg Graphic file (type bmp)
 <imagens/inpfun.jpg>
 
-Overfull \hbox (17.8108pt too wide) in paragraph at lines 353--353
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 352--352
 [][]  
  []
 
@@ -2390,7 +2391,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [17
 
 ]
-Overfull \hbox (12.69452pt too wide) in paragraph at lines 475--475
+Overfull \hbox (12.69452pt too wide) in paragraph at lines 474--474
  [] 
  []
 
@@ -2450,20 +2451,20 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `SLIDES.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 560.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 560.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 559.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 559.
 (SLIDES.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 560.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 560.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 559.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 559.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45940 strings out of 427671
- 905021 string characters out of 3149234
+ 45949 strings out of 427671
+ 905258 string characters out of 3149234
  1151282 words of memory out of 3000000
- 49295 multiletter control sequences out of 15000+200000
+ 49304 multiletter control sequences out of 15000+200000
  554592 words of font info for 107 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,14n,115p,796b,1166s stack positions out of 5000i,500n,10000p,200000b,50000s

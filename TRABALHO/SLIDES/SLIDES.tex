@@ -278,11 +278,10 @@
 \begin{frame}{O QUE É O SHINY}
 \protect\hypertarget{o-que-e-o-shiny}{}
 
-Estruturar tanto a interface com o usuário quanto o processamento de
-dados, geração de visualizações e modelagem, isto é, nós programamos
-tanto o user side quanto o server side numa tacada só. Assim, ao
-rodarmos o código, criamos um servidor que envia páginas web, recebe
-informações do usuário e processa os dados, utilizando apenas o R.
+\begin{itemize}
+\item Permite estruturar tanto a interface do usuário quanto o processamento de dados
+\item Criação de um servidor que envia páginas web, recebe informações do usuário e processa os dados, utilizando apenas o R.
+\end{itemize}
 
 \end{frame}
 
@@ -368,8 +367,8 @@ mainPanel() & \small Criar um painel principal contendo elementos de saída. \\
 \KeywordTok{library}\NormalTok{(shiny)}
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
   \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}
-              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }
-              \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{) )}
+              \DataTypeTok{label =} \OtherTok{NULL}\NormalTok{,}
+              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{) )}
 \NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
 \KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
 \end{Highlighting}
@@ -424,8 +423,8 @@ verbatimTextOutput() & Texto \\
 \KeywordTok{library}\NormalTok{(shiny)}
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
   \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}
-              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }
-              \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
+              \DataTypeTok{label =} \OtherTok{NULL}\NormalTok{,}
+              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
   \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"hist"}\NormalTok{))}
 \NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{\}}
 \KeywordTok{shinyApp}\NormalTok{(}\DataTypeTok{ui =}\NormalTok{ ui, }\DataTypeTok{server =}\NormalTok{ server)}
@@ -508,9 +507,9 @@ htmlOutput() & renderUI \\
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{ui <-}\StringTok{ }\KeywordTok{fluidPage}\NormalTok{(}
-  \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{, }
-    \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }
-    \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
+  \KeywordTok{sliderInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"num"}\NormalTok{,}
+              \DataTypeTok{label =} \OtherTok{NULL}\NormalTok{,}
+              \DataTypeTok{value =} \DecValTok{25}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{100}\NormalTok{), }
   \KeywordTok{plotOutput}\NormalTok{(}\StringTok{"hist"}\NormalTok{))}
 \NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
 \NormalTok{  output}\OperatorTok{$}\NormalTok{hist <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
