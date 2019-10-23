@@ -260,6 +260,8 @@
 \item User Interface
 \item Server
 \end{enumerate}
+\item Dashboards
+\item Publicação
 \item Aplicações
 \item Referências
 \end{enumerate}
@@ -536,11 +538,117 @@ htmlOutput() & renderUI \\
 
 \end{frame}
 
+\begin{frame}[fragile]{DASHBOARDS}
+\protect\hypertarget{dashboards}{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+\KeywordTok{library}\NormalTok{(shinydashboard)}
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{dashboardPage}\NormalTok{(}
+  \KeywordTok{dashboardHeader}\NormalTok{(),}
+  \KeywordTok{dashboardSidebar}\NormalTok{(),}
+  \KeywordTok{dashboardBody}\NormalTok{())}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{ \}}
+\KeywordTok{shinyApp}\NormalTok{(ui, server)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{RESULTADO}
+\protect\hypertarget{resultado-2}{}
+
+\includegraphics[width=4.4in]{imagens/d1}
+
+\end{frame}
+
+\begin{frame}[fragile]{PRÓXIMO PASSO}
+\protect\hypertarget{proximo-passo-2}{}
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+\KeywordTok{library}\NormalTok{(shinydashboard)}
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{dashboardPage}\NormalTok{(}
+  \KeywordTok{dashboardHeader}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Basic dashboard"}\NormalTok{),}
+  \KeywordTok{dashboardSidebar}\NormalTok{(),}
+  \KeywordTok{dashboardBody}\NormalTok{(}
+    \KeywordTok{fluidRow}\NormalTok{(}
+      \KeywordTok{box}\NormalTok{(}\KeywordTok{plotOutput}\NormalTok{(}\StringTok{"plot1"}\NormalTok{, }\DataTypeTok{height =} \DecValTok{250}\NormalTok{)),}
+      \KeywordTok{box}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Controls"}\NormalTok{, }
+          \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"slider"}\NormalTok{, }\StringTok{"Number of observations:"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{50}\NormalTok{)))))}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
+  \KeywordTok{set.seed}\NormalTok{(}\DecValTok{122}\NormalTok{)}
+\NormalTok{  histdata <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{)}
+\NormalTok{  output}\OperatorTok{$}\NormalTok{plot1 <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
+\NormalTok{    data <-}\StringTok{ }\NormalTok{histdata[}\KeywordTok{seq_len}\NormalTok{(input}\OperatorTok{$}\NormalTok{slider)]}
+    \KeywordTok{hist}\NormalTok{(data)\})\}}
+\KeywordTok{shinyApp}\NormalTok{(ui, server)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{RESULTADO}
+\protect\hypertarget{resultado-3}{}
+
+\includegraphics[width=4.4in]{imagens/d2}
+
+\end{frame}
+
+\begin{frame}[fragile]{PRÓXIMO PASSO}
+\protect\hypertarget{proximo-passo-3}{}
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(shiny)}
+\KeywordTok{library}\NormalTok{(shinydashboard)}
+\NormalTok{ui <-}\StringTok{ }\KeywordTok{dashboardPage}\NormalTok{(}
+  \KeywordTok{dashboardHeader}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Basic dashboard"}\NormalTok{),}
+  \KeywordTok{dashboardSidebar}\NormalTok{(}\KeywordTok{sidebarMenu}\NormalTok{(}
+    \KeywordTok{menuItem}\NormalTok{(}\StringTok{"Dashboard"}\NormalTok{, }\DataTypeTok{tabName =} \StringTok{"dashboard"}\NormalTok{, }\DataTypeTok{icon =} \KeywordTok{icon}\NormalTok{(}\StringTok{"dashboard"}\NormalTok{)),}
+    \KeywordTok{menuItem}\NormalTok{(}\StringTok{"Widgets"}\NormalTok{, }\DataTypeTok{tabName =} \StringTok{"widgets"}\NormalTok{, }\DataTypeTok{icon =} \KeywordTok{icon}\NormalTok{(}\StringTok{"th"}\NormalTok{))))}
+  \KeywordTok{dashboardBody}\NormalTok{(}
+    \KeywordTok{fluidRow}\NormalTok{(}
+      \KeywordTok{box}\NormalTok{(}\KeywordTok{plotOutput}\NormalTok{(}\StringTok{"plot1"}\NormalTok{, }\DataTypeTok{height =} \DecValTok{250}\NormalTok{)),}
+      \KeywordTok{box}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Controls"}\NormalTok{, }
+          \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"slider"}\NormalTok{, }\StringTok{"Number of observations:"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{50}\NormalTok{)))))}
+\NormalTok{server <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(input, output) \{}
+  \KeywordTok{set.seed}\NormalTok{(}\DecValTok{122}\NormalTok{)}
+\NormalTok{  histdata <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{)}
+\NormalTok{  output}\OperatorTok{$}\NormalTok{plot1 <-}\StringTok{ }\KeywordTok{renderPlot}\NormalTok{(\{}
+\NormalTok{    data <-}\StringTok{ }\NormalTok{histdata[}\KeywordTok{seq_len}\NormalTok{(input}\OperatorTok{$}\NormalTok{slider)]}
+    \KeywordTok{hist}\NormalTok{(data)\})\}}
+\KeywordTok{shinyApp}\NormalTok{(ui, server)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{RESULTADO}
+\protect\hypertarget{resultado-4}{}
+
+\includegraphics[width=4.4in]{imagens/d3}
+
+\end{frame}
+
+\begin{frame}{PUBLICAÇÃO}
+\protect\hypertarget{publicacao}{}
+
+\end{frame}
+
 \hypertarget{aplicacoes}{%
 \section{APLICAÇÕES}\label{aplicacoes}}
 
 \begin{frame}{REFERÊNCIAS}
 \protect\hypertarget{referencias}{}
+
+\small
 
 \begin{enumerate}
 \tightlist
@@ -555,6 +663,10 @@ htmlOutput() & renderUI \\
 \item
   \textbf{Curso-R}. Disponível em:
   \url{http://material.curso-r.com/shiny/}. Acesso em: setembro de 2019.
+\item
+  \textbf{shinydashborad}. Disponível em:
+  \url{https://rstudio.github.io/shinydashboard/get_started.html}.
+  Acesso em: outubro de 2019.
 \end{enumerate}
 
 \end{frame}

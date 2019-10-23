@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  22 OCT 2019 20:23
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  22 OCT 2019 21:27
 entering extended mode
 **./SLIDES.tex
 (SLIDES.tex
@@ -2192,25 +2192,25 @@ mapping=tex-text;" at 4.0pt
 
 ]
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 267.
+(Font)              scaled to size 10.0pt on input line 269.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 10.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 267.
+(Font)              scaled to size 14.4pt on input line 269.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 14.4pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 267.
+(Font)              scaled to size 12.0pt on input line 269.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 12.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 267.
+(Font)              scaled to size 12.0pt on input line 269.
 Requested font "[Carlito-Italic.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;m
 apping=tex-text;" at 12.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
@@ -2223,7 +2223,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/logo.jpg Graphic file (type bmp)
 <imagens/logo.jpg>
 
-Overfull \hbox (364.20679pt too wide) in paragraph at lines 276--276
+Overfull \hbox (364.20679pt too wide) in paragraph at lines 278--278
 [][]  
  []
 
@@ -2232,14 +2232,14 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [3
 
 ]
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 287--287
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 289--289
 [][]  
  []
 
 File: imagens/trade.png Graphic file (type bmp)
 <imagens/trade.png>
 
-Overfull \hbox (2.47551pt too wide) in paragraph at lines 287--287
+Overfull \hbox (2.47551pt too wide) in paragraph at lines 289--289
 [] 
  []
 
@@ -2251,7 +2251,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/cxv.png Graphic file (type bmp)
 <imagens/cxv.png>
 
-Overfull \hbox (12.80356pt too wide) in paragraph at lines 296--296
+Overfull \hbox (12.80356pt too wide) in paragraph at lines 298--298
  [] 
  []
 
@@ -2264,13 +2264,13 @@ Requested font "zavmr7t" at 10.95pt
 Requested font "zavmr7t" at 7.665pt
 Requested font "zavmr7t" at 5.475pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 9.30756pt on input line 308.
+(Font)              scaled to size 9.30756pt on input line 310.
 Requested font "zavmri7m" at 9.30756pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 6.51529pt on input line 308.
+(Font)              scaled to size 6.51529pt on input line 310.
 Requested font "zavmri7m" at 6.51529pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 4.65378pt on input line 308.
+(Font)              scaled to size 4.65378pt on input line 310.
 Requested font "zavmri7m" at 4.65378pt
 Requested font "zavmr7y" at 10.95pt
 Requested font "zavmr7y" at 7.665pt
@@ -2314,7 +2314,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [7
 
 ]
-Overfull \hbox (17.53215pt too wide) in paragraph at lines 343--343
+Overfull \hbox (17.53215pt too wide) in paragraph at lines 345--345
  [] 
  []
 
@@ -2326,7 +2326,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 File: imagens/inpfun.jpg Graphic file (type bmp)
 <imagens/inpfun.jpg>
 
-Overfull \hbox (17.8108pt too wide) in paragraph at lines 354--354
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 356--356
 [][]  
  []
 
@@ -2393,7 +2393,7 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [17
 
 ]
-Overfull \hbox (12.69452pt too wide) in paragraph at lines 476--476
+Overfull \hbox (12.69452pt too wide) in paragraph at lines 478--478
  [] 
  []
 
@@ -2434,14 +2434,114 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 [22
 
 ]
+\openout4 = `SLIDES.vrb'.
+
+(SLIDES.vrb)
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [23
 
 ]
+File: imagens/d1.png Graphic file (type bmp)
+<imagens/d1.png>
+
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 564--564
+[][]  
+ []
+
 File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 <fibeamer/theme/uu/uu-watermark.png>
 [24
+
+]
+\openout4 = `SLIDES.vrb'.
+
+(SLIDES.vrb
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/m/n' will be
+(Font)              scaled to size 5.10004pt on input line 7.
+Requested font "DejaVu Sans Mono/OT:script=latn;language=DFLT;mapping=tex-text;
+" at 5.10004pt
+ -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/public/dejavu/De
+jaVuSansMono.ttf
+LaTeX Font Info:    Font shape `TU/DejaVuSansMono(0)/bx/n' will be
+(Font)              scaled to size 5.10004pt on input line 8.
+)
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[25
+
+]
+File: imagens/d2.png Graphic file (type bmp)
+<imagens/d2.png>
+
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 600--600
+[][]  
+ []
+
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[26
+
+]
+\openout4 = `SLIDES.vrb'.
+
+(SLIDES.vrb)
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[27
+
+]
+File: imagens/d3.png Graphic file (type bmp)
+<imagens/d3.png>
+
+Overfull \hbox (17.8108pt too wide) in paragraph at lines 638--638
+[][]  
+ []
+
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[28
+
+]
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[29
+
+]
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[30
+
+]
+LaTeX Font Info:    Font shape `TU/Carlito(0)/bx/n' will be
+(Font)              scaled to size 10.0pt on input line 672.
+Requested font "[Carlito-Bold.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;map
+ping=tex-text;" at 10.0pt
+ -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
+/Carlito-Bold.ttf
+Requested font "zavmr7t" at 5.0pt
+LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
+(Font)              scaled to size 4.25003pt on input line 672.
+Requested font "zavmri7m" at 4.25003pt
+Requested font "zavmr7y" at 5.0pt
+Requested font "ex-iwonar" at 5.0pt
+Requested font "msam5" at 5.0pt
+Requested font "msbm5" at 5.0pt
+LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 672.
+Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
+mapping=tex-text;" at 7.0pt
+ -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
+/Carlito-Regular.ttf
+LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 672.
+Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
+mapping=tex-text;" at 5.0pt
+ -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
+/Carlito-Regular.ttf
+File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
+<fibeamer/theme/uu/uu-watermark.png>
+[31
 
 ]
 \tf@nav=\write6
@@ -2453,22 +2553,22 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `SLIDES.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 674.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 674.
 (SLIDES.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 562.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 562.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 674.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 674.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45949 strings out of 427671
- 905258 string characters out of 3149234
- 1151282 words of memory out of 3000000
- 49304 multiletter control sequences out of 15000+200000
- 554592 words of font info for 107 fonts, out of 3000000 for 9000
+ 46046 strings out of 427671
+ 907384 string characters out of 3149234
+ 1153926 words of memory out of 3000000
+ 49388 multiletter control sequences out of 15000+200000
+ 557018 words of font info for 117 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,14n,115p,796b,1166s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on SLIDES.pdf (24 pages).
+Output written on SLIDES.pdf (31 pages).
