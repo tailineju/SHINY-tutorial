@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  22 OCT 2019 21:27
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.10.4)  22 OCT 2019 22:02
 entering extended mode
 **./SLIDES.tex
 (SLIDES.tex
@@ -2514,27 +2514,27 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/Carlito(0)/bx/n' will be
-(Font)              scaled to size 10.0pt on input line 672.
+(Font)              scaled to size 10.0pt on input line 670.
 Requested font "[Carlito-Bold.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;map
 ping=tex-text;" at 10.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Bold.ttf
 Requested font "zavmr7t" at 5.0pt
 LaTeX Font Info:    Font shape `OML/zavm/m/it' will be
-(Font)              scaled to size 4.25003pt on input line 672.
+(Font)              scaled to size 4.25003pt on input line 670.
 Requested font "zavmri7m" at 4.25003pt
 Requested font "zavmr7y" at 5.0pt
 Requested font "ex-iwonar" at 5.0pt
 Requested font "msam5" at 5.0pt
 Requested font "msbm5" at 5.0pt
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 672.
+(Font)              scaled to size 7.0pt on input line 670.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 7.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
 /Carlito-Regular.ttf
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 672.
+(Font)              scaled to size 5.0pt on input line 670.
 Requested font "[Carlito-Regular.ttf]/OT:script=latn;language=DFLT;+lnum;+pnum;
 mapping=tex-text;" at 5.0pt
  -> C:/Users/Tailine/AppData/Roaming/MiKTeX/2.9/fonts/truetype/typoland/carlito
@@ -2553,20 +2553,20 @@ File: fibeamer/theme/uu/uu-watermark.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `SLIDES.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 674.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 674.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
 (SLIDES.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 674.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 674.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 672.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 672.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 46046 strings out of 427671
- 907384 string characters out of 3149234
+ 46050 strings out of 427671
+ 907413 string characters out of 3149234
  1153926 words of memory out of 3000000
- 49388 multiletter control sequences out of 15000+200000
+ 49392 multiletter control sequences out of 15000+200000
  557018 words of font info for 117 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,14n,115p,796b,1166s stack positions out of 5000i,500n,10000p,200000b,50000s

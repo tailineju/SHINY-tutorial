@@ -60,8 +60,8 @@ knitr::opts_chunk$set(dev='pdf')
 
 \begin{itemize}
 \item Pacote do R
-\item Cria de um servidor que envia páginas web, \textbf{recebe} informações do usuário e \textbf{processa} os dados.
-\item Permite estruturar a interface do usuário \textbf{e} o processamento de dados.
+\item Cria de um servidor que envia páginas web, \alert{recebe} informações do usuário e \alert{processa} os dados.
+\item Permite estruturar a interface do usuário \alert{e} o processamento de dados.
 \item Vantagens para o programador e para o usuário.
 \end{itemize}
 
@@ -313,8 +313,7 @@ shinyApp(ui, server)
 ## RESULTADO
 \includegraphics[width=4.4in]{imagens/d3}
 
-## PUBLICAÇÃO
-
+# PUBLICAÇÃO
 
 # APLICAÇÕES
 
@@ -323,4 +322,4 @@ shinyApp(ui, server)
 1. RSTUDIO INC. \textbf{Shiny from RStudio}. Disponível em: <https://shiny.rstudio.com/tutorial/>. Acesso em: setembro de 2019.
 2. PUC MINAS. \textbf{Desenvolvimento de Aplicativos Web Com R e Shiny:} inovações no ensino de Estatística. Belo Horizonte,v. 6, n. 2, p. 55-71, maio 2018
 3. \textbf{Curso-R}. Disponível em: <http://material.curso-r.com/shiny/>. Acesso em: setembro de 2019.
-4. \textbf{shinydashborad}. Disponível em: <https://rstudio.github.io/shinydashboard/get_started.html>. Acesso em: outubro de 2019.
+4. \textbf{shinydashboard}. Disponível em: <https://rstudio.github.io/shinydashboard/get_started.html>. Acesso em: outubro de 2019.
