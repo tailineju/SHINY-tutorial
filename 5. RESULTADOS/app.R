@@ -9,18 +9,6 @@
 ## CARREGANDO PACOTES E DADOS ----
 pacman::p_load(ggplot2, tidyverse, tidyr,dplyr, lubridate, stringr,
                broom, graphics, GGally, fmsb, shinydashboard)
-library(shiny)
-library(ggplot2)
-library(tidyverse)
-library(tidyr)
-library(dplyr)
-library(lubridate)
-library(stringr)
-library(broom)
-library(graphics)
-library(GGally)
-library(fmsb)
-library(shinydashboard)
 
 climb <- read.csv("csv/climb.csv")
 weat <- read.csv("csv/weather.csv")
