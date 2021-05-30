@@ -1,26 +1,28 @@
-# R - Pacote Shiny: Tutorial
+# R - Pacote Shiny
+- Tutoriais, aplicações e exemplos da utilização do pacote "Shiny" em R 
+- Inclue os códigos em RMarkdown geradores dos arquivos de texto/apresentação 
+- Desenvolvido como objeto de avaliação para disciplina Computação Estatística 2.
 
-OBS: Reorganização do repositório em andamento. Arquivo provisório.
+## **Introdução**
+Slides utilizados para introduzir a ideia e a estrutura de um aplicativo Shiny. 
 
-## 1. **Descrição:**
-Descrição.
+## **Tutorial completo**
+Documento com todo conteúdo em formato de tutorial para criação de um aplicativo Shiny.
 
-## 2. **Slides**
-Contendo os documento de geração do slide e o pdf para você não precisar baixar
-os arquivos e esperar rodar o markdown.
+## **Aplicações**
+Exemplos (códigos) de como aplicar/utilizar o pacote.
 
-## 3. **Tutorial em texto**
-Contendo um documento explicativo gerado em markdown com suas imagens e o
-referido pdf.
+## **Autores**
+- Davi Guerra
+- Gabriela Monteiro
+- Jadson Moura
+- Tailine Nonato
 
-## 4. **Aplicações**
-Contendo os exemplos.
+## **Resultados**
+Aplicativo Shiny elaborado de forma individual como resultado final do aprendizado sobre o pacote em questão.
 
-## 5. **Resultados finais**
-Aplicativo Shiny elaborado de forma autoral como resultado final do aprendizado sobre o pacote em questão.
+## **Links úteis**
 
-## 6. **Links úteis**
+-> Informações sobre o pacote: [Shiny from RStudio](https://shiny.rstudio.com/)
 
--> Cheatsheets: [Pacote Shiny](www.github.com/tailineju) 
-
--> Banco de dados utilizado nos resultados finais: [Nome-do-banco](www.github.com/tailineju) 
+-> Cheatsheets: [Pacote Shiny](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf) 
