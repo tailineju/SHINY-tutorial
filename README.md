@@ -14,6 +14,7 @@ Exemplos (códigos) de como aplicar/utilizar o pacote.
 
 ## **Autores**
 - Davi Guerra
+- Eduardo Leopoldino
 - Gabriela Monteiro
 - Jadson Moura
 - Tailine Nonato
